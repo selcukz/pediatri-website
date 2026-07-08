@@ -7,3 +7,5 @@ Thumbs.db
 .vercel
 node_modules/
 *.log
+
+.vercel
