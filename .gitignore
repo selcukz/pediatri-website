@@ -1,0 +1,9 @@
+# Gizli / yayınlanmayacak kaynak belgeler (CV telefon-eposta içeriyor, ham notlar)
+_kaynak/
+
+# Sistem / editör
+.DS_Store
+Thumbs.db
+.vercel
+node_modules/
+*.log
