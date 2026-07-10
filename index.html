@@ -53,6 +53,7 @@
   "image": "https://aslidoktor.com/assets/portre.png",
   "url": "https://aslidoktor.com/",
   "medicalSpecialty": "Pediatrics",
+  "telephone": "+90-850-250-8250",
   "description": "Çocuk sağlığı ve hastalıkları uzmanı; Koç Üniversitesi Hastanesi Çocuk Yoğun Bakım Ünitesi'nde uzman hekim. Yenidoğan resüsitasyonu, çocuk yoğun bakım ve acil değerlendirme.",
   "affiliation": {
     "@type": "Hospital",
@@ -298,6 +299,14 @@
   .cta:focus-visible{outline:3px solid var(--paper); outline-offset:3px}
   .cta .arw{transition:transform .2s ease}
   .cta:hover .arw{transform:translateX(4px)}
+  .appt-actions{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:36px}
+  .appt-actions .cta{margin-top:0}
+  .cta-phone{display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+    background:transparent; color:var(--paper); font-family:var(--disp); font-weight:700; font-size:1.02rem;
+    padding:15px 26px; border-radius:999px; border:1.5px solid rgba(243,243,235,.45);
+    transition:background .2s ease, border-color .2s ease}
+  .cta-phone:hover{background:rgba(243,243,235,.1); border-color:rgba(243,243,235,.8)}
+  .cta-phone:focus-visible{outline:3px solid var(--apricot); outline-offset:3px}
   /* pratik bilgiler — ebeveynin randevudan önce bilmek istedikleri */
   .appt .facts{display:flex; flex-wrap:wrap; gap:10px 40px; justify-content:center; margin-top:34px;
     font-size:.95rem; color:rgba(243,243,235,.82)}
@@ -526,17 +535,23 @@
         <p class="eyebrow" style="color:var(--apricot)">Randevu</p>
         <h2>Hazır olduğunuzda, <span class="accent">bir adım ötede.</span></h2>
         <p>
-          Randevu, Koç Üniversitesi Hastanesi'nin kendi güvenli sistemi üzerinden
-          alınır. Butona bastığınızda hastanenin resmi randevu sayfası yeni sekmede açılır.
+          Randevu iki şekilde alınabilir: <strong>online</strong> ya da hastanenin
+          <strong>çağrı merkezi</strong> üzerinden. İkisi de Koç Üniversitesi
+          Hastanesi'nin resmî sistemidir.
         </p>
-        <a class="cta" href="https://www.kuh.ku.edu.tr/randevu-al" target="_blank" rel="noopener">
-          Randevu al <span class="arw" aria-hidden="true">→</span>
-        </a>
+        <div class="appt-actions">
+          <a class="cta" href="https://www.kuh.ku.edu.tr/randevu-al" target="_blank" rel="noopener">
+            Online randevu al <span class="arw" aria-hidden="true">→</span>
+          </a>
+          <a class="cta-phone" href="tel:+908502508250">
+            <span aria-hidden="true">☎</span> 0850 250 8250 · Telefonla ara
+          </a>
+        </div>
         <div class="facts">
           <span><strong>Nerede:</strong>&nbsp;Koç Üniversitesi Hastanesi · İstanbul</span>
           <span><strong>Bölüm:</strong>&nbsp;Çocuk Sağlığı ve Hastalıkları</span>
         </div>
-        <p class="fine">kuh.ku.edu.tr · resmi hastane randevu sistemi</p>
+        <p class="fine">Online: kuh.ku.edu.tr · Çağrı merkezi: 0850 250 8250 — resmî hastane randevu sistemi</p>
       </div>
     </section>
 
@@ -548,7 +563,8 @@
           <div class="mono" style="margin-top:6px">Çocuk Sağlığı ve Hastalıkları Uzmanı · Koç Üniversitesi Hastanesi Çocuk Yoğun Bakım Ünitesi</div>
         </div>
         <div class="mono">
-          Randevu: <a href="https://www.kuh.ku.edu.tr/randevu-al" target="_blank" rel="noopener">kuh.ku.edu.tr/randevu-al</a>
+          Randevu: <a href="https://www.kuh.ku.edu.tr/randevu-al" target="_blank" rel="noopener">kuh.ku.edu.tr/randevu-al</a><br>
+          Çağrı merkezi: <a href="tel:+908502508250">0850 250 8250</a>
         </div>
       </div>
     </footer>
