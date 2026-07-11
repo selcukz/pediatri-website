@@ -249,6 +249,26 @@
   .klinik li::before{content:""; position:absolute; left:3px; top:.55em; width:7px; height:7px; border-radius:50%; background:var(--sage)}
   @media (max-width:640px){ .klinik ul{grid-template-columns:1fr} }
 
+  /* Cerrahpaşa mezuniyet logosu */
+  .cer-logo{height:30px; width:auto; vertical-align:-8px; margin-left:8px}
+
+  /* Yayınlar CTA kutusu */
+  .pub-cta{display:inline-flex; align-items:center; gap:15px; margin-top:24px; padding:15px 22px;
+    border:1.6px solid #d97757; border-radius:16px; background:rgba(217,119,87,.08);
+    text-decoration:none; color:var(--ink); box-shadow:0 3px 0 rgba(217,119,87,.28);
+    transition:background .2s ease, transform .2s ease, box-shadow .2s ease}
+  .pub-cta:hover{background:rgba(217,119,87,.15); transform:translateY(-2px); box-shadow:0 8px 20px rgba(217,119,87,.24)}
+  .pub-cta:focus-visible{outline:3px solid #d97757; outline-offset:3px}
+  .pub-cta-ic{flex-shrink:0; width:42px; height:42px; border-radius:11px; background:#d97757;
+    display:grid; place-items:center}
+  .pub-cta-ic svg{width:23px; height:23px; stroke:#fff; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+  .pub-cta-k{display:block; font-family:var(--disp); font-weight:700; font-size:.74rem; letter-spacing:.06em;
+    text-transform:uppercase; color:#c25f3d}
+  .pub-cta-t{display:block; font-family:var(--disp); font-weight:800; font-size:1.18rem; color:#b8542f; line-height:1.2}
+  .pub-cta-ar{margin-left:8px; color:#d97757; font-size:1.4rem; font-weight:700; transition:transform .2s ease}
+  .pub-cta:hover .pub-cta-ar{transform:translateX(5px)}
+  @media (max-width:480px){ .pub-cta{width:100%} .pub-cta-ar{margin-left:auto} }
+
   /* ebeveyn soruları — gerçek soru gibi, numarasız; her kart bir rehbere açılır */
   .cards{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:44px}
   @media (max-width:920px){ .cards{grid-template-columns:repeat(2,1fr)} }
@@ -454,9 +474,16 @@
               <li>Böbrek nakli sonrası yoğun bakım izlemi</li>
             </ul>
           </div>
-          <p style="margin-top:20px">
-            <a href="yayinlar.html" style="font-family:var(--disp); font-weight:700; text-decoration:none; color:var(--sage-deep)">Bilimsel yayınların tamamı →</a>
-          </p>
+          <a class="pub-cta" href="yayinlar.html">
+            <span class="pub-cta-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+            </span>
+            <span>
+              <span class="pub-cta-k">Bilimsel çalışmalar</span>
+              <span class="pub-cta-t">Yayınların tamamını gör</span>
+            </span>
+            <span class="pub-cta-ar" aria-hidden="true">→</span>
+          </a>
         </div>
         <!-- PORTRE: resmî hastane fotoğrafı (kuh.ku.edu.tr) -->
         <div class="frame portrait filled reveal" data-asset="portre">
