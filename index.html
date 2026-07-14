@@ -415,9 +415,6 @@
 <div class="page">
   <div class="wrap">
 
-    <!-- ============ KLİNİĞE YOLCULUK (scroll-world: sayfa açılışı — hastaneden muayene odasına tek uçuş, ardından hero) ============ -->
-    <div id="klinik-yolu" aria-label="Koç Üniversitesi Hastanesi'nden muayene odasına kaydırmalı yolculuk"></div>
-
     <!-- ============ HERO ============ -->
     <section class="hero reveal" id="ust">
       <div class="milestone"><span class="dot"></span></div>
@@ -435,10 +432,19 @@
           <p class="sig">— Uzm. Dr. Aslı Ece Zeybek, çocuk hekimi</p>
         </div>
 
-        <!-- HERO: canlı tablo — 16:9 kaynak, 4:5 çerçevede ortadan kırpılır (cover) -->
-        <div class="frame cine filled reveal" data-asset="hero-film">
-          <video src="assets/hero_film.mp4" poster="assets/hero.png" autoplay muted loop playsinline
+        <!-- HERO: karusel — 2 diorama görseli + hero filmi (film görsellerin ardından); 16:9 kaynak, 4:5 çerçevede ortadan kırpılır (cover) -->
+        <div class="frame cine filled reveal carousel" id="hero-carousel" data-asset="hero-film">
+          <img class="cslide is-on" src="assets/world/poster_hastane.webp"
+               alt="Koç Üniversitesi Hastanesi — sıcak renkli minyatür diorama illüstrasyonu, girişe yürüyen aileler">
+          <img class="cslide" src="assets/world/poster_klinik.webp"
+               alt="Muayene odası dioraması — Dr. Aslı küçük hastasını steteskopla dinliyor, rafta Boncuk peluşu">
+          <video class="cslide" src="assets/hero_film.mp4" poster="assets/hero.png" muted loop playsinline preload="metadata"
                  aria-label="Güneşli, sakin bir çocuk kliniği okuma köşesi — rafta Boncuk peluşu, yapraklar hafifçe kıpırdıyor"></video>
+          <div class="cdots" aria-label="Görsel seçimi">
+            <button type="button" class="is-on" aria-label="Hastane görseli"></button>
+            <button type="button" aria-label="Muayene odası görseli"></button>
+            <button type="button" aria-label="Klinik filmi"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -696,62 +702,39 @@
   })();
 </script>
 
-<!-- ============ KLİNİĞE YOLCULUK: kaydırma-kamerası motoru ============ -->
+<!-- ============ HERO KARUSELİ: 2 diorama görseli + hero filmi, yumuşak geçiş ============ -->
 <style>
-  /* Yolculuk ekranı doldururken sabit site kromu ve asistan kısa süreliğine çekilir */
-  .chart,.topbar,.spine,#ba-root{transition:opacity .4s ease}
-  html.sw-world-active .chart,html.sw-world-active .topbar,
-  html.sw-world-active .spine,html.sw-world-active #ba-root{opacity:0;pointer-events:none}
-  /* sitenin katmansız a{color:inherit} kuralı @layer sw'yi ezer — buton metni burada sabitlenir */
-  #klinik-yolu .sw-btn--primary{color:#fff}
+  .frame.carousel .cslide{opacity:0; transition:opacity .9s ease}
+  .frame.carousel .cslide.is-on{opacity:1}
+  .frame.carousel video.cslide{transform:none}
+  .cdots{position:absolute; left:50%; bottom:14px; transform:translateX(-50%); display:flex; gap:9px; z-index:2}
+  .cdots button{width:9px; height:9px; border-radius:50%; border:0; padding:0; cursor:pointer;
+    background:rgba(255,255,255,.6); box-shadow:0 0 0 1px rgba(39,51,48,.28);
+    transition:transform .25s ease, background .25s ease}
+  .cdots button.is-on{background:var(--apricot); transform:scale(1.3)}
+  .cdots button:focus-visible{outline:2px solid var(--sage-deep); outline-offset:2px}
 </style>
-<script src="assets/world/scroll-world.js" defer></script>
 <script>
-  window.addEventListener('DOMContentLoaded', function(){
-    var host = document.getElementById('klinik-yolu');
-    if (!host || !window.mountScrollWorld) return;
-    /* dünya, dioramaların kendi krem fonunu ve site fontlarını kullanır */
-    host.style.setProperty('--sw-bg', '#FBEFD8');
-    host.style.setProperty('--sw-ink', '#273330');
-    host.style.setProperty('--sw-ink-soft', '#57635D');
-    host.style.setProperty('--sw-font-display', '"Bricolage Grotesque",system-ui,sans-serif');
-    host.style.setProperty('--sw-font-body', '"Atkinson Hyperlegible",system-ui,sans-serif');
-    mountScrollWorld(host, {
-      nav: false,
-      hint: 'kaydırın — birlikte uçalım',
-      connScroll: 0.9,
-      sections: [
-        {
-          id: 'hastane', label: 'Hastane',
-          still: 'assets/world/poster_hastane.webp',
-          clip: 'assets/world/dive_hastane.mp4',
-          clipMobile: 'assets/world/dive_hastane-m.mp4',
-          scroll: 1.5, accent: '#5F8A6C',
-          eyebrow: 'Kliniğe yolculuk',
-          title: 'Her şey bu kapıdan başlar.',
-          body: 'Koç Üniversitesi Hastanesi — kaydırın, kapıdan birlikte süzülüp muayene odasına uçalım.',
-          tags: ['Koç Üniversitesi Hastanesi', 'Çocuk Sağlığı ve Hastalıkları']
-        },
-        {
-          id: 'muayene', label: 'Muayene odası',
-          still: 'assets/world/poster_klinik.webp',
-          clip: 'assets/world/dive_klinik.mp4',
-          clipMobile: 'assets/world/dive_klinik-m.mp4',
-          scroll: 1.9, linger: 0.45, accent: '#C97C46',
-          eyebrow: 'Muayene odası',
-          title: 'İçeride sizi bu sıcaklık karşılar.',
-          body: 'Muayene acele etmeden, oyunla ve sohbetle ilerler — Boncuk da raftan cesaret verir.',
-          tags: ['Sabırlı muayene', 'Ebeveyn hep yanında'],
-          cta: {
-            primary: { label: 'Randevu al', href: 'https://www.kuh.ku.edu.tr/randevu-al' },
-            secondary: { label: 'Ebeveyn rehberleri', href: '#ebeveynler' }
-          }
-        }
-      ],
-      connectors: ['assets/world/conn_1.mp4'],
-      connectorsMobile: ['assets/world/conn_1-m.mp4']
-    });
-  });
+  // Hero karuseli: hastane → muayene odası → hero filmi (film, görsellerin ardından başlar)
+  (function(){
+    var root = document.getElementById('hero-carousel'); if(!root) return;
+    var slides = [].slice.call(root.querySelectorAll('.cslide'));
+    var dots   = [].slice.call(root.querySelectorAll('.cdots button'));
+    var durs   = [5000, 5000, 9000];   // film loop'una biraz daha uzun ekran süresi
+    var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var i = 0, t;
+    function show(n){
+      i = n % slides.length;
+      slides.forEach(function(s, k){
+        s.classList.toggle('is-on', k === i);
+        if (s.tagName === 'VIDEO') { if (k === i && !reduce) { s.play().catch(function(){}); } else { s.pause(); } }
+      });
+      dots.forEach(function(d, k){ d.classList.toggle('is-on', k === i); });
+    }
+    function arm(){ clearTimeout(t); if (!reduce) t = setTimeout(function(){ show(i + 1); arm(); }, durs[i]); }
+    dots.forEach(function(d, k){ d.addEventListener('click', function(){ show(k); arm(); }); });
+    show(0); arm();
+  })();
 </script>
 
 <!-- ============ BONCUK REHBER ASİSTANI (bilgilendirme; tanı vermez, tarayıcıda çalışır) ============ -->
