@@ -721,17 +721,16 @@
     var slides = [].slice.call(root.querySelectorAll('.cslide'));
     var dots   = [].slice.call(root.querySelectorAll('.cdots button'));
     var durs   = [5000, 5000, 9000];   // film loop'una biraz daha uzun ekran süresi
-    var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
     var i = 0, t;
     function show(n){
       i = n % slides.length;
       slides.forEach(function(s, k){
         s.classList.toggle('is-on', k === i);
-        if (s.tagName === 'VIDEO') { if (k === i && !reduce) { s.play().catch(function(){}); } else { s.pause(); } }
+        if (s.tagName === 'VIDEO') { if (k === i) { s.play().catch(function(){}); } else { s.pause(); } }
       });
       dots.forEach(function(d, k){ d.classList.toggle('is-on', k === i); });
     }
-    function arm(){ clearTimeout(t); if (!reduce) t = setTimeout(function(){ show(i + 1); arm(); }, durs[i]); }
+    function arm(){ clearTimeout(t); t = setTimeout(function(){ show(i + 1); arm(); }, durs[i]); }
     dots.forEach(function(d, k){ d.addEventListener('click', function(){ show(k); arm(); }); });
     show(0); arm();
   })();
