@@ -31,8 +31,12 @@
 
 <!-- YAYINLARKEN: aşağıdaki ALAN-ADI kısımlarını gerçek alan adıyla değiştir -->
 <link rel="canonical" href="https://aslidoktor.com/">
+<link rel="alternate" hreflang="tr" href="https://aslidoktor.com/">
+<link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://aslidoktor.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:site_name" content="Uzm. Dr. Aslı Ece Zeybek">
 <meta property="og:title" content="Uzm. Dr. Aslı Ece Zeybek — Koç Üniversitesi Hastanesi Çocuk Doktoru">
 <meta property="og:description" content="Koç Üniversitesi Hastanesi'nde çocuk sağlığı ve hastalıkları uzmanı. Yavaş yavaş, birlikte büyürüz.">
@@ -120,6 +124,11 @@
   }
   .topbar .who{font-family:var(--disp); font-weight:700; font-size:1rem; letter-spacing:-.01em}
   .topbar .who small{display:block; font-weight:400; font-size:.7rem; color:var(--ink-soft)}
+  .topbar .bar-right{display:flex; align-items:center; gap:14px; flex-shrink:0}
+  .topbar .lang{font-family:var(--disp); font-weight:700; font-size:.82rem; color:var(--ink-soft);
+    text-decoration:none; padding:7px 12px; border-radius:999px; border:1px solid rgba(39,51,48,.18)}
+  .topbar .lang:hover{background:rgba(39,51,48,.06); color:var(--ink)}
+  .topbar .lang:focus-visible{outline:3px solid var(--sage-deep); outline-offset:2px}
   .topbar .go{
     display:inline-flex; align-items:center; gap:8px; flex-shrink:0;
     background:var(--apricot); color:var(--apricot-ink); text-decoration:none;
@@ -381,7 +390,10 @@
 <!-- ÜST BAR: ebeveyn hangi bölümde olursa olsun randevuya tek tık -->
 <header class="topbar">
   <div class="who">Uzm. Dr. Aslı Ece Zeybek<small>Çocuk Sağlığı ve Hastalıkları · Koç Üniversitesi Hastanesi</small></div>
-  <a class="go" href="https://www.kuh.ku.edu.tr/randevu-al" target="_blank" rel="noopener">Randevu al</a>
+  <div class="bar-right">
+    <a class="lang" href="/en/" hreflang="en" lang="en" aria-label="Switch to the English page">EN</a>
+    <a class="go" href="https://www.kuh.ku.edu.tr/randevu-al" target="_blank" rel="noopener">Randevu al</a>
+  </div>
 </header>
 
 <div class="page">
