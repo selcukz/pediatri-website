@@ -50,7 +50,7 @@
   .topbar .go{background:var(--apricot); color:var(--apricot-ink); text-decoration:none; font-family:var(--disp);
     font-weight:700; font-size:.92rem; padding:9px 18px; border-radius:999px; box-shadow:0 3px 0 rgba(0,0,0,.14); flex-shrink:0}
   .topbar .go:focus-visible,.topbar .back:focus-visible{outline:3px solid var(--sage-deep); outline-offset:2px}
-  article{max-width:78ch; margin:0 auto; padding:clamp(40px,7vh,80px) clamp(20px,4vw,44px) 40px}
+  article{max-width:min(1900px,100%); margin:0 auto; padding:clamp(28px,5vh,56px) clamp(20px,3.5vw,72px) 40px}
   .eyebrow{font-family:var(--disp); font-weight:600; font-size:13px; letter-spacing:.09em; text-transform:uppercase; color:var(--sage-deep); margin:0 0 14px}
   h1{font-family:var(--disp); font-weight:800; font-size:clamp(1.9rem,4.5vw,3rem); line-height:1.05; letter-spacing:-.02em; margin:0 0 18px}
   h2{font-family:var(--disp); font-weight:700; font-size:clamp(1.25rem,2.4vw,1.6rem); margin:44px 0 12px}
@@ -69,7 +69,7 @@
   .note{background:var(--paper-2); border-radius:12px; padding:16px 20px; font-size:.95rem; color:var(--ink-soft); margin:36px 0}
   .sources{margin-top:44px; padding-top:20px; border-top:1px solid rgba(39,51,48,.12); font-size:.92rem; color:var(--ink-soft)}
   .sources h2{font-size:1.05rem; margin-top:0}
-  footer{max-width:78ch; margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
+  footer{max-width:min(1900px,100%); margin:0 auto; padding:0 clamp(20px,3.5vw,72px) 56px; font-size:.85rem; color:var(--ink-soft)}
   /* bölüm illüstrasyonları */
   .fig{margin:26px 0 30px; border-radius:16px; overflow:hidden; border:1px solid rgba(39,51,48,.1);
     box-shadow:0 10px 26px rgba(39,51,48,.08)}
@@ -90,6 +90,25 @@
   .months span{background:var(--paper-2); color:var(--ink-soft); cursor:default}
   .months .now{background:var(--apricot); color:var(--apricot-ink); box-shadow:0 3px 0 rgba(0,0,0,.14)}
   .months-note{font-size:.85rem; color:var(--ink-soft); margin:0 0 8px}
+  /* geniş ekran: tam genişlik yerleşim */
+  @media (min-width:1100px){
+    .intro{display:grid; grid-template-columns:1fr 1.08fr; gap:clamp(32px,4vw,80px); align-items:center; margin-bottom:6px}
+    .intro .fig{margin:0}
+    .sec{display:grid; grid-template-columns:1fr 1.15fr; gap:clamp(32px,4vw,80px); align-items:stretch; margin:clamp(40px,7vh,80px) 0}
+    .sec .fig{margin:0; display:flex; flex-direction:column}
+    .sec .fig img{flex:1; min-height:0; width:100%; height:100%; object-fit:cover}
+    .sec--flip .fig{order:2}
+    .sec-body>h2:first-child{margin-top:0}
+    .cols2{columns:2; column-gap:clamp(32px,3vw,64px)}
+    .cols2>li,.cols2 .mgroup{break-inside:avoid}
+    .mgroup>h3:first-child{margin-top:0}
+    .callout ul{columns:2; column-gap:clamp(32px,3vw,64px)}
+    .callout li{break-inside:avoid}
+    .endgrid{display:grid; grid-template-columns:1.15fr 1fr; gap:clamp(32px,4vw,80px); align-items:start; margin-top:44px}
+    .endgrid .note{margin:0}
+    .endgrid .sources{margin:0; padding-top:0; border-top:0}
+    .glance{grid-template-columns:repeat(5,1fr)}
+  }
 </style>
 </head>
 <body>
@@ -100,16 +119,14 @@
 </header>
 
 <article>
+  <div class="intro">
+  <div class="intro-text">
   <p class="eyebrow">Ebeveynler için · Ay Ay Bebek Rehberi</p>
   <h1>1 aylık bebek: bu ay sizi ne bekliyor?</h1>
 
   <p class="lead">İlk ay, bebeğiniz kadar sizin de dünyaya alıştığınız aydır. Bu sayfa,
   1 aylık bir bebeğin neler yaptığını, nasıl beslenip nasıl uyuduğunu, beyin gelişimini
   nelerin desteklediğini ve hangi durumlarda hekime başvurmak gerektiğini tek yerde toplar.</p>
-
-  <figure class="fig" style="margin-top:30px">
-    <img src="assets/fig_1ay_hero.webp" alt="Boncuk, kundaklanmış minik ayıcıkla halının üzerinde uzanıyor; arkalarında örgüden kocaman bir 1 rakamı" width="1344" height="716">
-  </figure>
 
   <nav class="months" aria-label="Ay ay bebek rehberi">
     <a class="now" href="rehber-1-aylik-bebek.html" aria-current="page">1</a>
@@ -119,6 +136,11 @@
     <span title="Yakında">11</span><span title="Yakında">12</span>
   </nav>
   <p class="months-note">Diğer ayların sayfaları hazırlandıkça buraya eklenecek.</p>
+  </div>
+  <figure class="fig">
+    <img src="assets/fig_1ay_hero.webp" alt="Boncuk, kundaklanmış minik ayıcıkla halının üzerinde uzanıyor; arkalarında örgüden kocaman bir 1 rakamı" width="1344" height="716">
+  </figure>
+  </div>
 
   <h2>Bir bakışta 1. ay</h2>
   <div class="glance">
@@ -129,14 +151,18 @@
     <div class="chip"><div class="big">5–6+</div><div class="lbl">ıslak bez/gün —<br>en iyi beslenme göstergesi</div></div>
   </div>
 
-  <h2>Gelişim: bu ay bebeğiniz ne yapar?</h2>
+  <section class="sec">
   <figure class="fig">
     <img src="assets/fig_1ay_gelisim.webp" alt="Boncuk ve minik ayıcık, adaçayı yeşili matın üzerinde yan yana yüzüstü egzersiz yapıyor" width="1344" height="768" loading="lazy">
     <figcaption>Yüzüstü egzersiz (tummy time): uyanıkken, gözetim altında, günde 2–3 kez 2–3 dakika.</figcaption>
   </figure>
+  <div class="sec-body">
+  <h2>Gelişim: bu ay bebeğiniz ne yapar?</h2>
   <p>Aşağıdakiler çoğu bebeğin 1. ayın sonuna doğru yaptıklarıdır; her bebek kendi
   hızında ilerler, biraz erken ya da geç olması çoğu zaman normaldir.</p>
 
+  <div class="cols2">
+  <div class="mgroup">
   <h3>Hareket</h3>
   <ul>
     <li>Eller çoğunlukla yumruk hâlindedir; hareketler kısa ve sıçrayıcıdır.</li>
@@ -144,7 +170,8 @@
     <li>Yenidoğan refleksleri (emme, arama, yakalama, irkilme) aktiftir.</li>
     <li>Ellerini yüzüne ve ağzına doğru götürmeye başlar.</li>
   </ul>
-
+  </div>
+  <div class="mgroup">
   <h3>Görme ve işitme</h3>
   <ul>
     <li>En net 20–30 cm mesafeyi görür; yüzleri ve siyah-beyaz zıt desenleri tercih eder.</li>
@@ -152,19 +179,26 @@
         kayma bu ayda normaldir, kalıcı kayma ise muayene gerektirir.</li>
     <li>Sesinizi tanır; yüksek sese irkilir, tanıdık sesle sakinleşir.</li>
   </ul>
-
+  </div>
+  <div class="mgroup">
   <h3>İletişim</h3>
   <ul>
     <li>Ağlama bu ayın ana iletişim yoludur; genellikle 6. haftada doruğa ulaşır, sonra azalır.</li>
     <li>Boğazdan gelen küçük sesler çıkarmaya başlar; asıl "sosyal gülümseme" 6–8. haftalarda gelir.</li>
     <li>Kucaklamak ve hızla yanıt vermek bebeği şımartmaz; bu yaşta güvenli bağlanmanın temelidir.</li>
   </ul>
+  </div>
+  </div>
+  </div>
+  </section>
 
-  <h2>Uyku ve güvenli uyku</h2>
+  <section class="sec sec--flip">
   <figure class="fig">
     <img src="assets/fig_1ay_uyku.webp" alt="Minik ayıcık boş ve güvenli beşiğinde sırtüstü uyuyor, Boncuk başında nöbet tutuyor" width="1344" height="768" loading="lazy">
     <figcaption>Güvenli uykunun üç kuralı: sırtüstü, bomboş beşik, ilk 6 ay aynı odada kendi yatağı.</figcaption>
   </figure>
+  <div class="sec-body">
+  <h2>Uyku ve güvenli uyku</h2>
   <p>Gece-gündüz ritmi henüz oluşmadığı için sık uyanmak bu ayda normaldir ve beslenme
   için gereklidir. Gündüzleri aydınlık ve olağan ev sesli, geceleri karanlık ve sessiz
   tutmak ritmin kurulmasını hızlandırır. Güvenli uyku kuralları ise pazarlıksızdır:</p>
@@ -176,12 +210,16 @@
     <li>Bebeğin bulunduğu ortamda asla sigara içilmemelidir.</li>
   </ul>
   <p>Ayrıntı için: <a href="rehber-uyku-duzeni.html">Çocuklarda uyku düzeni rehberi</a>.</p>
+  </div>
+  </section>
 
-  <h2>Beslenme: ne verilir, ne verilmez?</h2>
+  <section class="sec">
   <figure class="fig">
     <img src="assets/fig_1ay_beslenme.webp" alt="Boncuk koltukta kundaklı minik ayıcığı biberonla besliyor, yanda D vitamini damlası" width="1344" height="768" loading="lazy">
     <figcaption>Bu ayın menüsü tek kalem: anne sütü — ve her gün 400 IU D vitamini damlası.</figcaption>
   </figure>
+  <div class="sec-body">
+  <h2>Beslenme: ne verilir, ne verilmez?</h2>
   <p>Bu ayın menüsü tek kalemdir: <strong>anne sütü</strong> — istedikçe, günde 8–12 ve
   üzeri öğün. Sık sık, kümeler hâlinde emmek ve yaklaşık 3. haftadaki büyüme atağında
   iştahın artması normaldir. Anne sütü yoksa ya da yetmiyorsa mama, hekim önerisiyle ve
@@ -198,12 +236,16 @@
     <li><strong>Her türlü ek gıda:</strong> Sindirim sistemi hazır değildir; ek gıda 6. ayda başlar.</li>
   </ul>
   <p>Ek gıda dönemi için: <a href="rehber-beslenme.html">Ek gıdaya nasıl başlarız?</a></p>
+  </div>
+  </section>
 
-  <h2>Oyun ve beyin gelişimi</h2>
+  <section class="sec sec--flip">
   <figure class="fig">
     <img src="assets/fig_1ay_oyun.webp" alt="Boncuk, sırtüstü yatan minik ayıcığa siyah-beyaz kontrast kartları gösteriyor" width="1344" height="716" loading="lazy">
     <figcaption>Siyah-beyaz kontrast kartlar: bu ayda renkli oyuncaklardan daha etkili.</figcaption>
   </figure>
+  <div class="sec-body">
+  <h2>Oyun ve beyin gelişimi</h2>
   <p>İlk yıllarda bebek beyni saniyede bir milyondan fazla yeni sinir bağlantısı kurar.
   Bu ayda en etkili "oyuncak" pahalı bir şey değildir: yüzünüz, sesiniz ve teninizdir.</p>
   <ul>
@@ -223,9 +265,11 @@
     <li><strong>Ekran:</strong> Bu yaşta hiç önerilmez; 18–24 aydan önce ekran, yalnızca
         görüntülü aile aramasıyla sınırlı tutulmalıdır.</li>
   </ul>
+  </div>
+  </section>
 
   <h2>Bu ayın kontrol listesi</h2>
-  <ul>
+  <ul class="cols2">
     <li><strong>1. ay sağlam çocuk muayenesi:</strong> Kilo, boy ve baş çevresi eğriye işlenir;
         sarılık, göbek, kalça ve kalp değerlendirilir; emzirme düzeni konuşulur.</li>
     <li><strong>Taramalar:</strong> Topuk kanı ve işitme taraması tamamlanmış, sonuçları sorulmuş olmalı.</li>
@@ -250,17 +294,22 @@
     Gece gelişen ateş için: <a href="rehber-gece-atesi.html">Gece ateş rehberi</a>.</p>
   </div>
 
-  <h2>Anneye not</h2>
+  <section class="sec">
   <figure class="fig">
     <img src="assets/fig_1ay_anne.webp" alt="Anne su samuru, yavrusunu göğsünde uyuturken huzurla dinleniyor; yanında bir fincan çay ve lale" width="1344" height="716" loading="lazy">
     <figcaption>Kendinize de bebeğinize gösterdiğiniz şefkati gösterin.</figcaption>
   </figure>
+  <div class="sec-body">
+  <h2>Anneye not</h2>
   <p>Bu ay bebeğiniz kadar siz de yenisiniz; az uyku, hormonlar ve öğrenme telaşının
   hepsi geçicidir ve yardım istemek zayıflık değildir. İki haftadan uzun süren yoğun
   hüzün, sürekli ağlama isteği ya da bebeğe karşı ilgisizlik hissi, "lohusalık
   hüznünden" fazlası olabilir: doğum sonrası depresyon sık görülür ve tedavi edilebilir.
   Böyle hissediyorsanız lütfen hekiminizle paylaşın.</p>
+  </div>
+  </section>
 
+  <div class="endgrid">
   <div class="note">
     Bu rehber genel bilgilendirme amaçlıdır ve muayenenin yerini tutmaz. Her bebek
     kendi hızında gelişir; buradaki basamaklar çoğunluğun aralığıdır. Bebeğinizle
@@ -276,6 +325,7 @@
       <li><a href="https://hsgm.saglik.gov.tr" target="_blank" rel="noopener">T.C. Sağlık Bakanlığı — Halk Sağlığı Genel Müdürlüğü</a></li>
       <li><a href="https://www.kuh.ku.edu.tr" target="_blank" rel="noopener">Koç Üniversitesi Hastanesi</a></li>
     </ul>
+  </div>
   </div>
 </article>
 
