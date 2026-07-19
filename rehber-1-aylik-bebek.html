@@ -70,6 +70,18 @@
   .sources{margin-top:44px; padding-top:20px; border-top:1px solid rgba(39,51,48,.12); font-size:.92rem; color:var(--ink-soft)}
   .sources h2{font-size:1.05rem; margin-top:0}
   footer{max-width:78ch; margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
+  /* bölüm illüstrasyonları */
+  .fig{margin:26px 0 30px; border-radius:16px; overflow:hidden; border:1px solid rgba(39,51,48,.1);
+    box-shadow:0 10px 26px rgba(39,51,48,.08)}
+  .fig img{width:100%; display:block}
+  .fig figcaption{font-size:.85rem; color:var(--ink-soft); padding:10px 16px; background:var(--paper-2)}
+  /* bir bakışta çipleri */
+  .glance{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:20px 0}
+  .glance .chip{background:var(--paper-2); border-radius:14px; padding:16px 14px; text-align:center}
+  .glance .big{font-family:var(--disp); font-weight:800; font-size:clamp(1.25rem,2.2vw,1.6rem); color:var(--sage-deep); line-height:1.1}
+  .glance .chip:first-child .big{color:var(--apricot-ink)}
+  .glance .chip:first-child{background:#F7E9DE}
+  .glance .lbl{font-size:.82rem; color:var(--ink-soft); margin-top:6px; line-height:1.4}
   /* ay gezinme şeridi — seri içi */
   .months{display:flex; flex-wrap:wrap; gap:8px; margin:26px 0 6px}
   .months a,.months span{font-family:var(--disp); font-weight:700; font-size:.9rem; width:40px; height:40px;
@@ -95,6 +107,10 @@
   1 aylık bir bebeğin neler yaptığını, nasıl beslenip nasıl uyuduğunu, beyin gelişimini
   nelerin desteklediğini ve hangi durumlarda hekime başvurmak gerektiğini tek yerde toplar.</p>
 
+  <figure class="fig" style="margin-top:30px">
+    <img src="assets/fig_1ay_hero.webp" alt="Boncuk, kundaklanmış minik ayıcıkla halının üzerinde uzanıyor; arkalarında örgüden kocaman bir 1 rakamı" width="1344" height="716">
+  </figure>
+
   <nav class="months" aria-label="Ay ay bebek rehberi">
     <a class="now" href="rehber-1-aylik-bebek.html" aria-current="page">1</a>
     <span title="Yakında">2</span><span title="Yakında">3</span><span title="Yakında">4</span>
@@ -105,18 +121,19 @@
   <p class="months-note">Diğer ayların sayfaları hazırlandıkça buraya eklenecek.</p>
 
   <h2>Bir bakışta 1. ay</h2>
-  <div class="tablewrap">
-    <table>
-      <tr><th>Konu</th><th>Bu ayda beklenen</th></tr>
-      <tr><td>Uyku</td><td>Günde toplam 14–17 saat; 2–4 saatlik parçalar hâlinde</td></tr>
-      <tr><td>Beslenme</td><td>Yalnızca anne sütü (veya hekim önerisiyle mama); günde 8–12+ öğün</td></tr>
-      <tr><td>Kilo alımı</td><td>Haftada yaklaşık 150–200 g; doğum kilosuna 10–14. günde dönüş</td></tr>
-      <tr><td>Görme</td><td>20–30 cm mesafeyi net görür — emzirme mesafesi</td></tr>
-      <tr><td>Islak bez</td><td>Günde 5–6 ve üzeri; yeterli beslenmenin en iyi göstergesi</td></tr>
-    </table>
+  <div class="glance">
+    <div class="chip"><div class="big">14–17 sa</div><div class="lbl">günlük uyku,<br>2–4 saatlik parçalarla</div></div>
+    <div class="chip"><div class="big">8–12+</div><div class="lbl">öğün anne sütü,<br>istedikçe</div></div>
+    <div class="chip"><div class="big">150–200 g</div><div class="lbl">haftalık kilo alımı</div></div>
+    <div class="chip"><div class="big">20–30 cm</div><div class="lbl">net görüş —<br>emzirme mesafesi</div></div>
+    <div class="chip"><div class="big">5–6+</div><div class="lbl">ıslak bez/gün —<br>en iyi beslenme göstergesi</div></div>
   </div>
 
   <h2>Gelişim: bu ay bebeğiniz ne yapar?</h2>
+  <figure class="fig">
+    <img src="assets/fig_1ay_gelisim.webp" alt="Boncuk ve minik ayıcık, adaçayı yeşili matın üzerinde yan yana yüzüstü egzersiz yapıyor" width="1344" height="768" loading="lazy">
+    <figcaption>Yüzüstü egzersiz (tummy time): uyanıkken, gözetim altında, günde 2–3 kez 2–3 dakika.</figcaption>
+  </figure>
   <p>Aşağıdakiler çoğu bebeğin 1. ayın sonuna doğru yaptıklarıdır; her bebek kendi
   hızında ilerler, biraz erken ya da geç olması çoğu zaman normaldir.</p>
 
@@ -144,6 +161,10 @@
   </ul>
 
   <h2>Uyku ve güvenli uyku</h2>
+  <figure class="fig">
+    <img src="assets/fig_1ay_uyku.webp" alt="Minik ayıcık boş ve güvenli beşiğinde sırtüstü uyuyor, Boncuk başında nöbet tutuyor" width="1344" height="768" loading="lazy">
+    <figcaption>Güvenli uykunun üç kuralı: sırtüstü, bomboş beşik, ilk 6 ay aynı odada kendi yatağı.</figcaption>
+  </figure>
   <p>Gece-gündüz ritmi henüz oluşmadığı için sık uyanmak bu ayda normaldir ve beslenme
   için gereklidir. Gündüzleri aydınlık ve olağan ev sesli, geceleri karanlık ve sessiz
   tutmak ritmin kurulmasını hızlandırır. Güvenli uyku kuralları ise pazarlıksızdır:</p>
@@ -157,6 +178,10 @@
   <p>Ayrıntı için: <a href="rehber-uyku-duzeni.html">Çocuklarda uyku düzeni rehberi</a>.</p>
 
   <h2>Beslenme: ne verilir, ne verilmez?</h2>
+  <figure class="fig">
+    <img src="assets/fig_1ay_beslenme.webp" alt="Boncuk koltukta kundaklı minik ayıcığı biberonla besliyor, yanda D vitamini damlası" width="1344" height="768" loading="lazy">
+    <figcaption>Bu ayın menüsü tek kalem: anne sütü — ve her gün 400 IU D vitamini damlası.</figcaption>
+  </figure>
   <p>Bu ayın menüsü tek kalemdir: <strong>anne sütü</strong> — istedikçe, günde 8–12 ve
   üzeri öğün. Sık sık, kümeler hâlinde emmek ve yaklaşık 3. haftadaki büyüme atağında
   iştahın artması normaldir. Anne sütü yoksa ya da yetmiyorsa mama, hekim önerisiyle ve
@@ -175,6 +200,10 @@
   <p>Ek gıda dönemi için: <a href="rehber-beslenme.html">Ek gıdaya nasıl başlarız?</a></p>
 
   <h2>Oyun ve beyin gelişimi</h2>
+  <figure class="fig">
+    <img src="assets/fig_1ay_oyun.webp" alt="Boncuk, sırtüstü yatan minik ayıcığa siyah-beyaz kontrast kartları gösteriyor" width="1344" height="716" loading="lazy">
+    <figcaption>Siyah-beyaz kontrast kartlar: bu ayda renkli oyuncaklardan daha etkili.</figcaption>
+  </figure>
   <p>İlk yıllarda bebek beyni saniyede bir milyondan fazla yeni sinir bağlantısı kurar.
   Bu ayda en etkili "oyuncak" pahalı bir şey değildir: yüzünüz, sesiniz ve teninizdir.</p>
   <ul>
@@ -222,6 +251,10 @@
   </div>
 
   <h2>Anneye not</h2>
+  <figure class="fig">
+    <img src="assets/fig_1ay_anne.webp" alt="Anne su samuru, yavrusunu göğsünde uyuturken huzurla dinleniyor; yanında bir fincan çay ve lale" width="1344" height="716" loading="lazy">
+    <figcaption>Kendinize de bebeğinize gösterdiğiniz şefkati gösterin.</figcaption>
+  </figure>
   <p>Bu ay bebeğiniz kadar siz de yenisiniz; az uyku, hormonlar ve öğrenme telaşının
   hepsi geçicidir ve yardım istemek zayıflık değildir. İki haftadan uzun süren yoğun
   hüzün, sürekli ağlama isteği ya da bebeğe karşı ilgisizlik hissi, "lohusalık
