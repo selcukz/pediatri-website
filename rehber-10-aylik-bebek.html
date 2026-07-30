@@ -109,12 +109,12 @@
   .etut{margin:52px 0}
   .etut-frame{position:relative; padding:clamp(8px,1vw,12px); border-radius:4px; background:#E8DEC6;
     box-shadow:0 16px 38px rgba(51,41,29,.24), inset 0 0 0 1px rgba(168,91,60,.35)}
-  .etut video{display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:2px}
+  .etut video,.etut-solo video{display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:2px}
   .etut-text{margin-top:24px}
   .etut-text h2{margin-top:0}
-  /* tek başına duran ikinci etüt — metnin içinde geniş bir levha gibi */
-  .etut-solo{margin:36px auto 44px; max-width:960px}
-  .etut-solo figcaption{margin-top:12px; font-size:.9rem; color:var(--ink-soft); font-style:italic; text-align:center}
+  /* ikinci etüt — ana videodan küçük, metnin yanında duran yardımcı levha */
+  .etut-solo{margin:32px 0 40px; max-width:560px}
+  .etut-solo figcaption{margin-top:10px; font-size:.88rem; color:var(--ink-soft); font-style:italic}
   @media (min-width:1100px){
     .cols2{columns:2; column-gap:clamp(32px,3vw,64px)}
     .cols2>li,.cols2 .mgroup{break-inside:avoid}
@@ -124,6 +124,10 @@
     .glance{grid-template-columns:repeat(5,1fr)}
     .etut{display:grid; grid-template-columns:1.35fr 1fr; gap:clamp(32px,3.5vw,64px); align-items:center}
     .etut-text{margin-top:0}
+    /* geniş ekranda ikinci etüt metnin sağına, küçük ve hizalı oturur */
+    .etut-solo{max-width:none; display:grid; grid-template-columns:minmax(0,420px) 1fr;
+      gap:clamp(20px,2.5vw,36px); align-items:center}
+    .etut-solo figcaption{margin-top:0}
     .endgrid{display:grid; grid-template-columns:1.15fr 1fr; gap:clamp(32px,4vw,80px); align-items:start; margin-top:44px}
     .endgrid .note,.endgrid .sources{margin:0}
     .endgrid .sources{padding-top:0; border-top:0}
