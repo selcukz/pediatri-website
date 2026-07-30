@@ -112,6 +112,9 @@
   .etut video{display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:2px}
   .etut-text{margin-top:24px}
   .etut-text h2{margin-top:0}
+  /* tek başına duran ikinci etüt — metnin içinde geniş bir levha gibi */
+  .etut-solo{margin:36px auto 44px; max-width:960px}
+  .etut-solo figcaption{margin-top:12px; font-size:.9rem; color:var(--ink-soft); font-style:italic; text-align:center}
   @media (min-width:1100px){
     .cols2{columns:2; column-gap:clamp(32px,3vw,64px)}
     .cols2>li,.cols2 .mgroup{break-inside:avoid}
@@ -242,13 +245,14 @@
     </div>
   </div>
   <script>
-    /* Hareket azaltma tercihi açıksa etüt durur, poster karesi kalır. */
+    /* Hareket azaltma tercihi açıksa etütler durur, poster kareleri kalır. */
     (function(){
       if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-      var v=document.querySelector('.etut video'); if(!v) return;
-      v.removeAttribute('autoplay'); v.autoplay=false; v.loop=false;
-      try{ v.pause(); v.currentTime=0; }catch(e){}
-      v.setAttribute('controls','');
+      document.querySelectorAll('.etut video,.etut-solo video').forEach(function(v){
+        v.removeAttribute('autoplay'); v.autoplay=false; v.loop=false;
+        try{ v.pause(); v.currentTime=0; }catch(e){}
+        v.setAttribute('controls','');
+      });
     })();
   </script>
 
@@ -263,6 +267,15 @@
     <li>Elini tutup zorla göstertmeyin; kendi başlattığı işaretler daha değerlidir.</li>
     <li>12. ayda hiç gösterme, el sallama ya da bakış takibi yoksa hekiminize söyleyin.</li>
   </ul>
+
+  <figure class="etut-solo">
+    <div class="etut-frame">
+      <video src="assets/video_10ay_etut2.mp4" poster="assets/poster_10ay_etut2.webp"
+             autoplay muted loop playsinline preload="metadata"
+             aria-label="Aynı defterden ikinci sayfa: kırmızı tebeşirle çizilmiş el etütleri — parmak uçlarıyla küçük bir nesneyi tutan bebek eli, pergel çizgileri ve alçak tabureye tutunan bir bebek çalışması"></video>
+    </div>
+    <figcaption>Aynı defterden el etütleri: kavrayan parmaklar ve gösteren parmak, aynı incelikten doğar.</figcaption>
+  </figure>
 
   <h2>Beslenme: aile sofrasına yaklaşırken</h2>
   <p>Düzen günde <strong>3 öğün ve 1–2 ara öğündür</strong>; anne sütü ya da mama

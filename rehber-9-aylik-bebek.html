@@ -112,6 +112,9 @@
   .sahne video{display:block; width:100%; aspect-ratio:16/9; object-fit:cover}
   .sahne-text{margin-top:24px}
   .sahne-text h2{margin-top:0}
+  /* tek başına duran ikinci sahne */
+  .sahne-solo{margin:36px auto 44px; max-width:960px}
+  .sahne-solo figcaption{margin-top:14px; font-size:.9rem; color:var(--ink-soft); text-align:center}
   @media (min-width:1100px){
     .cols2{columns:2; column-gap:clamp(32px,3vw,64px)}
     .cols2>li,.cols2 .mgroup{break-inside:avoid}
@@ -237,13 +240,14 @@
     </div>
   </div>
   <script>
-    /* Hareket azaltma tercihi açıksa sahne durur, poster karesi kalır. */
+    /* Hareket azaltma tercihi açıksa sahneler durur, poster kareleri kalır. */
     (function(){
       if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-      var v=document.querySelector('.sahne video'); if(!v) return;
-      v.removeAttribute('autoplay'); v.autoplay=false; v.loop=false;
-      try{ v.pause(); v.currentTime=0; }catch(e){}
-      v.setAttribute('controls','');
+      document.querySelectorAll('.sahne video,.sahne-solo video').forEach(function(v){
+        v.removeAttribute('autoplay'); v.autoplay=false; v.loop=false;
+        try{ v.pause(); v.currentTime=0; }catch(e){}
+        v.setAttribute('controls','');
+      });
     })();
   </script>
 
@@ -370,6 +374,15 @@
     sonrası kusma veya uyanmama</strong> gecikmeden <strong>112</strong>'yi gerektirir.
     Gece gelişen ateş için: <a href="rehber-gece-atesi.html">Gece ateş rehberi</a>.</p>
   </div>
+
+  <figure class="sahne-solo">
+    <div class="sahne-frame">
+      <video src="assets/video_9ay_anime2.mp4" poster="assets/poster_9ay_anime2.webp"
+             autoplay muted loop playsinline preload="metadata"
+             aria-label="El boyaması animasyon üslubunda ikinci sessiz kısa film: dokuz aylık bir bebek gülümseyerek annesinin açılan kollarına doğru ilerliyor"></video>
+    </div>
+    <figcaption>Dokuzuncu ayın en tanıdık sahnesi: açılan iki kola doğru gitmek.</figcaption>
+  </figure>
 
   <h2>Anneye not</h2>
   <p>Dokuzuncu ayda evin içi bir anda küçülür: bebeğiniz artık ayakta, elleri
