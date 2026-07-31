@@ -41,7 +41,7 @@
 <meta property="og:title" content="Uzm. Dr. Aslı Ece Zeybek — Koç Üniversitesi Hastanesi Çocuk Doktoru">
 <meta property="og:description" content="Koç Üniversitesi Hastanesi'nde çocuk sağlığı ve hastalıkları uzmanı. Yavaş yavaş, birlikte büyürüz.">
 <meta property="og:url" content="https://aslidoktor.com/">
-<meta property="og:image" content="https://aslidoktor.com/assets/hero.png">
+<meta property="og:image" content="https://aslidoktor.com/assets/hero.webp">
 <meta name="twitter:card" content="summary_large_image">
 
 <meta name="theme-color" content="#F3F3EB">
@@ -422,6 +422,31 @@
     .mascot-row{grid-template-columns:1fr 1fr}
   }
 
+  /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
+     Yorgun bir ebeveyn telefonda okuyor: 13px altı metin kalmasın,
+     dokunulan her şey en az 44px olsun (Apple/Google erişilebilirlik ölçüsü). */
+  @media (max-width:640px){
+    .eyebrow{font-size:14px; letter-spacing:.07em}
+    .cred-label{font-size:.82rem}
+    .card p{font-size:1rem}
+    .card .more{font-size:.95rem}
+    .aylar .aciklama{font-size:1rem}
+    .aylar-head .durum{font-size:.82rem}
+    .ay .beat{font-size:.84rem}
+    .ay{padding:16px 8px 14px; min-height:88px}
+    .film-cap,figcaption{font-size:.88rem}
+    .appt .fine{font-size:.85rem}
+    .facts{font-size:1rem}
+    footer{font-size:.92rem}
+    footer .mono{font-size:.9rem}
+    /* dokunma hedefleri */
+    .topbar .lang{min-width:48px; min-height:44px; display:inline-flex; align-items:center; justify-content:center}
+    .topbar .go{min-height:44px; display:inline-flex; align-items:center}
+    footer a,.appt .fine a{display:inline-block; padding:6px 0; min-height:44px}
+    #ba-close{width:44px; height:44px; font-size:1.35rem}
+    #ba-launch{min-height:48px}
+  }
+
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .reveal{opacity:1; transform:none; transition:none}
@@ -579,22 +604,22 @@
         <h3 class="group-t">Bebeğinizin ilk yılı</h3>
         <div class="cards">
           <a class="card reveal" href="rehber-yenidogan-izlemi.html">
-            <div class="card-art"><img src="assets/card_yenidogan.png" alt="Boncuk, kundaklanmış yenidoğan oyuncak ayıyı ay ışığında kucaklıyor"></div>
+            <div class="card-art"><img src="assets/card_yenidogan.webp" alt="Boncuk, kundaklanmış yenidoğan oyuncak ayıyı ay ışığında kucaklıyor" loading="lazy" decoding="async"></div>
             <h3>Yenidoğan ve bebek izlemi</h3><p>İlk günler, sarılık, göbek bakımı, emzirme sıklığı ve güvenli uyku.</p>
             <span class="more">Rehberi oku →</span>
           </a>
           <a class="card reveal" href="rehber-beslenme.html">
-            <div class="card-art"><img src="assets/card_beslenme.png" alt="Boncuk minik bir masada oyuncak ayıya kaşıkla püre yediriyor"></div>
+            <div class="card-art"><img src="assets/card_beslenme.webp" alt="Boncuk minik bir masada oyuncak ayıya kaşıkla püre yediriyor" loading="lazy" decoding="async"></div>
             <h3>Ek gıdaya nasıl başlarız?</h3><p>6. aydan aile sofrasına: kıvamlar, öğünler, verilmeyecekler ve pratik tarifler.</p>
             <span class="more">Rehberi oku →</span>
           </a>
           <a class="card reveal" href="rehber-dis-cikarma.html">
-            <div class="card-art"><img src="assets/card_dis.png" alt="Boncuk, minik dişi çıkan ayıcığa yumuşak diş kaşıyıcı uzatıyor"></div>
+            <div class="card-art"><img src="assets/card_dis.webp" alt="Boncuk, minik dişi çıkan ayıcığa yumuşak diş kaşıyıcı uzatıyor" loading="lazy" decoding="async"></div>
             <h3>Bebeklerde diş çıkarma</h3><p>Ne zaman başlar, belirtileri neler, nasıl rahatlatılır ve nelerden kaçınılmalı.</p>
             <span class="more">Rehberi oku →</span>
           </a>
           <a class="card reveal" href="rehber-uyku-duzeni.html">
-            <div class="card-art"><img src="assets/card_uyku.png" alt="Boncuk uykulu ayıcığı yatağa yatırıyor, pencerede hilal ve yıldızlar"></div>
+            <div class="card-art"><img src="assets/card_uyku.webp" alt="Boncuk uykulu ayıcığı yatağa yatırıyor, pencerede hilal ve yıldızlar" loading="lazy" decoding="async"></div>
             <h3>Çocuklarda uyku düzeni</h3><p>Yaşa göre kaç saat uyku, uyku rutini kurmak ve güvenli uyku.</p>
             <span class="more">Rehberi oku →</span>
           </a>
@@ -605,17 +630,17 @@
         <h3 class="group-t">Sağlıklı büyüme</h3>
         <div class="cards">
           <a class="card reveal" href="rehber-ilk-muayene.html">
-            <div class="card-art"><img src="assets/card_muayene.png" alt="Boncuk, oyuncak ayının kalbini steteskopla dinliyor"></div>
+            <div class="card-art"><img src="assets/card_muayene.webp" alt="Boncuk, oyuncak ayının kalbini steteskopla dinliyor" loading="lazy" decoding="async"></div>
             <h3>İlk muayenede bizi ne bekliyor?</h3><p>Randevuya ne getirmeli, muayene nasıl ilerler, çocuğunuzu nasıl hazırlarsınız.</p>
             <span class="more">Rehberi oku →</span>
           </a>
           <a class="card reveal" href="rehber-asi-takvimi.html">
-            <div class="card-art"><img src="assets/card_asi.png" alt="Boncuk kolundaki yara bandını cesaretle gösteriyor, arkada kalpli aşı takvimi"></div>
+            <div class="card-art"><img src="assets/card_asi.webp" alt="Boncuk kolundaki yara bandını cesaretle gösteriyor, arkada kalpli aşı takvimi" loading="lazy" decoding="async"></div>
             <h3>Hangi ay hangi aşı?</h3><p>2026 ulusal takvim, takvim dışı aşılar ve yan etkide ne yapılacağı.</p>
             <span class="more">Rehberi oku →</span>
           </a>
           <a class="card reveal" href="rehber-buyume-gelisme.html">
-            <div class="card-art"><img src="assets/card_buyume.png" alt="Boncuk, oyuncak ayıyı boy cetvelinde ölçüyor, arkada yükselen büyüme eğrisi"></div>
+            <div class="card-art"><img src="assets/card_buyume.webp" alt="Boncuk, oyuncak ayıyı boy cetvelinde ölçüyor, arkada yükselen büyüme eğrisi" loading="lazy" decoding="async"></div>
             <h3>Büyüme ve gelişme takibi</h3><p>Persentil ne anlatır, boy-kilo-baş çevresi ve aylara göre gelişim basamakları.</p>
             <span class="more">Rehberi oku →</span>
           </a>
@@ -626,17 +651,17 @@
         <h3 class="group-t">Hastalık anlarında</h3>
         <div class="cards">
           <a class="card reveal" href="rehber-gece-atesi.html">
-            <div class="card-art"><img src="assets/card_gece.png" alt="Uyku şapkalı Boncuk, gece uyuyan ayıcığın başında termometreyle nöbette"></div>
+            <div class="card-art"><img src="assets/card_gece.webp" alt="Uyku şapkalı Boncuk, gece uyuyan ayıcığın başında termometreyle nöbette" loading="lazy" decoding="async"></div>
             <h3>Gece ateş çıktı — ne zaman gelmeliyiz?</h3><p>Ne zaman evde izlenir, ne zaman hekime gelinir: sakin bir yol haritası.</p>
             <span class="more">Rehberi oku →</span>
           </a>
           <a class="card reveal" href="rehber-ishal-kusma.html">
-            <div class="card-art"><img src="assets/card_ishal.png" alt="Boncuk dinlenen ayıcığa pipetli bir bardak su uzatıyor"></div>
+            <div class="card-art"><img src="assets/card_ishal.webp" alt="Boncuk dinlenen ayıcığa pipetli bir bardak su uzatıyor" loading="lazy" decoding="async"></div>
             <h3>İshal ve kusma</h3><p>Sıvı kaybını önlemek, evde ne yapılır ve ne zaman acile gidilir.</p>
             <span class="more">Rehberi oku →</span>
           </a>
           <a class="card reveal" href="rehber-cocukluk-enfeksiyonlari.html">
-            <div class="card-art"><img src="assets/card_enfeksiyon.png" alt="Boncuk, üşütmüş oyuncak ayıyı battaniyeye sarıp sıcak içecekle bakıyor"></div>
+            <div class="card-art"><img src="assets/card_enfeksiyon.webp" alt="Boncuk, üşütmüş oyuncak ayıyı battaniyeye sarıp sıcak içecekle bakıyor" loading="lazy" decoding="async"></div>
             <h3>Sık görülen enfeksiyonlar</h3><p>Soğuk algınlığı, boğaz ve kulak: evde bakım, antibiyotik ne zaman, acil belirtiler.</p>
             <span class="more">Rehberi oku →</span>
           </a>
@@ -657,18 +682,18 @@
       <!-- MASKOT: iki an yeter — karşılama ve muayene -->
       <div class="mascot-row">
         <div class="frame square filled reveal" data-asset="maskot-1">
-          <video src="assets/boncuk_1_karsilama.mp4" autoplay muted loop playsinline aria-label="Boncuk el sallayarak karşılıyor"></video>
+          <video data-ambient src="assets/boncuk_1_karsilama.mp4" poster="assets/poster_boncuk_1_karsilama.webp" muted loop playsinline aria-label="Boncuk el sallayarak karşılıyor" preload="none"></video>
         </div>
         <div class="frame square filled reveal" data-asset="maskot-2">
-          <video src="assets/boncuk_2_muayene.mp4" autoplay muted loop playsinline aria-label="Boncuk oyuncak ayıyı nazikçe muayene ediyor — korkacak bir şey yok"></video>
+          <video data-ambient src="assets/boncuk_2_muayene.mp4" poster="assets/poster_boncuk_2_muayene.webp" muted loop playsinline aria-label="Boncuk oyuncak ayıyı nazikçe muayene ediyor — korkacak bir şey yok" preload="none"></video>
         </div>
       </div>
 
       <!-- BONCUK'UN KÖŞESİ: geniş sahne, başlıklı — bölümün kapanış görüntüsü -->
       <figure class="reveal" style="margin:44px auto 0; max-width:960px">
         <div class="frame cine filled trim" data-asset="hero-film">
-          <video src="assets/hero_film.mp4" poster="assets/hero.png" autoplay muted loop playsinline
-                 aria-label="Güneşli, sakin bir çocuk kliniği okuma köşesi — rafta Boncuk peluşu, yapraklar hafifçe kıpırdıyor"></video>
+          <video data-ambient src="assets/hero_film.mp4" poster="assets/hero.webp" muted loop playsinline
+                 aria-label="Güneşli, sakin bir çocuk kliniği okuma köşesi — rafta Boncuk peluşu, yapraklar hafifçe kıpırdıyor" preload="none"></video>
         </div>
         <figcaption class="film-cap">Boncuk'un okuma köşesi — muayeneden önce bir masal molası.</figcaption>
       </figure>
@@ -978,5 +1003,27 @@
   form.addEventListener("submit",function(e){ e.preventDefault(); var v=input.value.trim(); if(!v) return; input.value=""; ask(v); });
 })();
 </script>
+<!-- Telefon düzeltmeleri en sonda: asistan ve kart stillerinden SONRA gelmeli ki
+     sıralamada kazansın (aynı özgüllükte son kural uygulanır). -->
+<style>
+  @media (max-width:640px){
+    /* okunabilirlik: hiçbir metin 14px'in altında kalmasın */
+    .chips span{font-size:14px}
+    .cred-label{font-size:14px}
+    .aylar-head .durum{font-size:14px}
+    .ay .beat{font-size:14px; line-height:1.3}
+    .pub-cta-k{font-size:14px}
+    .film-cap,figcaption,.split-media figcaption,.appt-side figcaption{font-size:14px}
+    .appt .fine{font-size:14px}
+    .appt .facts{font-size:15px}
+    .topbar .lang{font-size:14px}
+    footer,footer .mono{font-size:14px}
+    #ba-launch .ba-l-txt{font-size:14px}
+    /* dokunma hedefleri en az 44px */
+    #ba-close{width:44px; height:44px; font-size:1.4rem}
+    .topbar .lang{min-width:48px; min-height:44px; display:inline-flex; align-items:center; justify-content:center}
+  }
+</style>
+<script src="assets/mobil-video.js" defer></script>
 </body>
 </html>

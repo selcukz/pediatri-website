@@ -11,7 +11,7 @@
 <meta property="og:title" content="Çocuklarda uyku düzeni: yaşa göre kaç saat uyumalı?">
 <meta property="og:description" content="Yaşa göre uyku ihtiyacı, uyku rutini kurmak ve güvenli uyku: ebeveynler için sakin bir rehber.">
 <meta property="og:url" content="https://aslidoktor.com/rehber-uyku-duzeni.html">
-<meta property="og:image" content="https://aslidoktor.com/assets/card_uyku.png">
+<meta property="og:image" content="https://aslidoktor.com/assets/card_uyku.webp">
 <meta name="theme-color" content="#F3F3EB">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦦</text></svg>">
 <script type="application/ld+json">
@@ -71,6 +71,28 @@
   .sources h2{font-size:1.05rem; margin-top:0}
   footer{max-width:74ch; margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
   @media (max-width:560px){ .art{float:none; width:56%; margin:0 auto 20px} }
+
+  /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
+     13px altı metin bırakma, dokunulan her şey en az 44px olsun. */
+  @media (max-width:640px){
+    .eyebrow{font-size:14px}
+    .glance .lbl{font-size:14px}
+    .months-note{font-size:14px}
+    figcaption,.fig figcaption{font-size:14px}
+    .note,.sources{font-size:15px}
+    .sources li{margin:10px 0}
+    .sources a{display:inline-block; padding:4px 0}
+    .topbar .go{min-height:44px; display:inline-flex; align-items:center}
+    .topbar .back{min-height:44px; display:inline-flex; align-items:center}
+    .months a,.months span{width:44px; height:44px; font-size:1rem}
+    table{font-size:1rem}
+    footer{font-size:14px}
+  }
+  .tablewrap{position:relative}
+  .tablewrap::after{content:"→ kaydırın"; position:absolute; top:8px; right:10px; font-size:.75rem;
+    color:var(--ink-soft); background:rgba(243,243,235,.92); padding:3px 8px; border-radius:999px;
+    pointer-events:none}
+  @media (min-width:760px){ .tablewrap::after{display:none} }
 </style>
 </head>
 <body>
@@ -84,7 +106,7 @@
   <p class="eyebrow">Ebeveynler için · Rehber</p>
   <h1>Çocuklarda uyku düzeni</h1>
 
-  <div class="art"><img src="assets/card_uyku.png" alt="Boncuk, uykulu ayıcığı yumuşak bir yatağa yatırıyor; pencerede hilal ve yıldızlar"></div>
+  <div class="art"><img src="assets/card_uyku.webp" alt="Boncuk, uykulu ayıcığı yumuşak bir yatağa yatırıyor; pencerede hilal ve yıldızlar" loading="lazy" decoding="async"></div>
 
   <p class="lead">Uyku, büyümenin sessiz yakıtıdır. İyi bir uyku düzeni bir
   gecede kurulmaz; tutarlılık ve sabırla, adım adım oturur.</p>

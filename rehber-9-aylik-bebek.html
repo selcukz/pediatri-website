@@ -133,6 +133,23 @@
     .endgrid .sources{padding-top:0; border-top:0}
   }
   @media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important} }
+
+  /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
+     13px altı metin bırakma, dokunulan her şey en az 44px olsun. */
+  @media (max-width:640px){
+    .eyebrow{font-size:14px}
+    .glance .lbl{font-size:14px}
+    .months-note{font-size:14px}
+    figcaption,.fig figcaption{font-size:14px}
+    .note,.sources{font-size:15px}
+    .sources li{margin:10px 0}
+    .sources a{display:inline-block; padding:4px 0}
+    .topbar .go{min-height:44px; display:inline-flex; align-items:center}
+    .topbar .back{min-height:44px; display:inline-flex; align-items:center}
+    .months a,.months span{width:44px; height:44px; font-size:1rem}
+    table{font-size:1rem}
+    footer{font-size:14px}
+  }
 </style>
 </head>
 <body>
@@ -231,9 +248,8 @@
 
   <div class="sahne">
     <figure class="sahne-frame" style="margin:0">
-      <video src="assets/video_9ay_anime.mp4" poster="assets/poster_9ay_anime.webp"
-             autoplay muted loop playsinline preload="metadata"
-             aria-label="El boyaması Japon animasyonu üslubunda sessiz kısa film: dokuz aylık bir bebek alçak masaya tutunarak ayağa kalkar, yan adımlarla annesine doğru ilerler ve gülerek el sallar"></video>
+      <video data-ambient src="assets/video_9ay_anime.mp4" poster="assets/poster_9ay_anime.webp" muted loop playsinline
+             aria-label="El boyaması Japon animasyonu üslubunda sessiz kısa film: dokuz aylık bir bebek alçak masaya tutunarak ayağa kalkar, yan adımlarla annesine doğru ilerler ve gülerek el sallar" preload="none"></video>
     </figure>
     <div class="sahne-text">
       <h2>Tutunarak yürümek: ayakta geçen ilk metreler</h2>
@@ -395,9 +411,8 @@
 
   <figure class="sahne-solo">
     <div class="sahne-frame">
-      <video src="assets/video_9ay_anime2.mp4" poster="assets/poster_9ay_anime2.webp"
-             autoplay muted loop playsinline preload="metadata"
-             aria-label="El boyaması animasyon üslubunda ikinci sessiz kısa film: dokuz aylık bir bebek gülümseyerek annesinin açılan kollarına doğru ilerliyor"></video>
+      <video data-ambient src="assets/video_9ay_anime2.mp4" poster="assets/poster_9ay_anime2.webp" muted loop playsinline
+             aria-label="El boyaması animasyon üslubunda ikinci sessiz kısa film: dokuz aylık bir bebek gülümseyerek annesinin açılan kollarına doğru ilerliyor" preload="none"></video>
     </div>
     <figcaption>Dokuzuncu ayın en tanıdık sahnesi: açılan iki kola doğru gitmek.</figcaption>
   </figure>
@@ -434,5 +449,6 @@
 
 <footer>Uzm. Dr. Aslı Ece Zeybek · Çocuk Sağlığı ve Hastalıkları Uzmanı · Son güncelleme: Temmuz 2026</footer>
 
+<script src="assets/mobil-video.js" defer></script>
 </body>
 </html>

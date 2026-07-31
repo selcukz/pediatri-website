@@ -11,7 +11,7 @@
 <meta property="og:title" content="Çocukta gece ateşi ne zaman acil? Evde ne yapılır?">
 <meta property="og:description" content="Evde ne yapılır, ne zaman hekime gelinir: ebeveynler için sakin bir yol haritası.">
 <meta property="og:url" content="https://aslidoktor.com/rehber-gece-atesi.html">
-<meta property="og:image" content="https://aslidoktor.com/assets/card_gece.png">
+<meta property="og:image" content="https://aslidoktor.com/assets/card_gece.webp">
 <meta name="theme-color" content="#F3F3EB">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦦</text></svg>">
 <script type="application/ld+json">
@@ -66,6 +66,23 @@
   .sources h2{font-size:1.05rem; margin-top:0}
   footer{max-width:74ch; margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
   @media (max-width:560px){ .art{float:none; width:56%; margin:0 auto 20px} }
+
+  /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
+     13px altı metin bırakma, dokunulan her şey en az 44px olsun. */
+  @media (max-width:640px){
+    .eyebrow{font-size:14px}
+    .glance .lbl{font-size:14px}
+    .months-note{font-size:14px}
+    figcaption,.fig figcaption{font-size:14px}
+    .note,.sources{font-size:15px}
+    .sources li{margin:10px 0}
+    .sources a{display:inline-block; padding:4px 0}
+    .topbar .go{min-height:44px; display:inline-flex; align-items:center}
+    .topbar .back{min-height:44px; display:inline-flex; align-items:center}
+    .months a,.months span{width:44px; height:44px; font-size:1rem}
+    table{font-size:1rem}
+    footer{font-size:14px}
+  }
 </style>
 </head>
 <body>
@@ -79,7 +96,7 @@
   <p class="eyebrow">Ebeveynler için · Rehber</p>
   <h1>Gece ateş çıktı — ne zaman gelmeliyiz?</h1>
 
-  <div class="art"><img src="assets/card_gece.png" alt="Uyku şapkalı Boncuk, uyuyan ayıcığın başında termometreyle nöbette"></div>
+  <div class="art"><img src="assets/card_gece.webp" alt="Uyku şapkalı Boncuk, uyuyan ayıcığın başında termometreyle nöbette" loading="lazy" decoding="async"></div>
 
   <p class="lead">Gece yarısı sıcak bir alın, her ebeveynin kalbini hızlandırır.
   Önce derin bir nefes: ateş çoğu zaman hastalığın kendisi değil, vücudun
@@ -87,7 +104,7 @@
 
   <!-- Boncuk'la 1 Dakika: sesli özet (tıkla-oynat; otomatik ses yok) -->
   <div style="clear:both; margin:28px 0; border-radius:14px; overflow:hidden; background:var(--paper-2); border:1px solid rgba(39,51,48,.1)">
-    <video poster="assets/card_gece.png" controls preload="none"
+    <video poster="assets/card_gece.webp" controls preload="none"
            style="display:block; width:100%; aspect-ratio:16/9"
            aria-label="Boncuk'la 1 Dakika: Ateş gece gelirse — sesli ve altyazılı özet video">
       <source src="assets/video_gece_atesi.mp4" type="video/mp4">

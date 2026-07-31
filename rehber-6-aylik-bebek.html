@@ -11,7 +11,7 @@
 <meta property="og:title" content="6 aylık bebek: ek gıdaya başlangıç, aşılar ve gelişim">
 <meta property="og:description" content="Ay ay bebek rehberi — 6. ay: ek gıdaya geçiş, desteksiz oturma, 6. ay aşıları ve beyin gelişimini destekleyen oyunlar.">
 <meta property="og:url" content="https://aslidoktor.com/rehber-6-aylik-bebek.html">
-<meta property="og:image" content="https://aslidoktor.com/assets/card_6ay.png">
+<meta property="og:image" content="https://aslidoktor.com/assets/card_6ay.webp">
 <meta name="theme-color" content="#F3F3EB">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦦</text></svg>">
 <script type="application/ld+json">
@@ -102,6 +102,23 @@
     .endgrid .note{margin:0}
     .endgrid .sources{margin:0; padding-top:0; border-top:0}
     .glance{grid-template-columns:repeat(5,1fr)}
+  }
+
+  /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
+     13px altı metin bırakma, dokunulan her şey en az 44px olsun. */
+  @media (max-width:640px){
+    .eyebrow{font-size:14px}
+    .glance .lbl{font-size:14px}
+    .months-note{font-size:14px}
+    figcaption,.fig figcaption{font-size:14px}
+    .note,.sources{font-size:15px}
+    .sources li{margin:10px 0}
+    .sources a{display:inline-block; padding:4px 0}
+    .topbar .go{min-height:44px; display:inline-flex; align-items:center}
+    .topbar .back{min-height:44px; display:inline-flex; align-items:center}
+    .months a,.months span{width:44px; height:44px; font-size:1rem}
+    table{font-size:1rem}
+    footer{font-size:14px}
   }
 </style>
 </head>

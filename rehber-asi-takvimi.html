@@ -11,7 +11,7 @@
 <meta property="og:title" content="2026 çocuk aşı takvimi: hangi ay hangi aşı yapılır?">
 <meta property="og:description" content="Ulusal aşı takvimi ve rutin dışı aşılar, ebeveyn diliyle.">
 <meta property="og:url" content="https://aslidoktor.com/rehber-asi-takvimi.html">
-<meta property="og:image" content="https://aslidoktor.com/assets/card_asi.png">
+<meta property="og:image" content="https://aslidoktor.com/assets/card_asi.webp">
 <meta name="theme-color" content="#F3F3EB">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦦</text></svg>">
 <script type="application/ld+json">
@@ -71,6 +71,28 @@
   .sources h2{font-size:1.05rem; margin-top:0}
   footer{max-width:78ch; margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
   @media (max-width:560px){ .art{float:none; width:56%; margin:0 auto 20px} }
+
+  /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
+     13px altı metin bırakma, dokunulan her şey en az 44px olsun. */
+  @media (max-width:640px){
+    .eyebrow{font-size:14px}
+    .glance .lbl{font-size:14px}
+    .months-note{font-size:14px}
+    figcaption,.fig figcaption{font-size:14px}
+    .note,.sources{font-size:15px}
+    .sources li{margin:10px 0}
+    .sources a{display:inline-block; padding:4px 0}
+    .topbar .go{min-height:44px; display:inline-flex; align-items:center}
+    .topbar .back{min-height:44px; display:inline-flex; align-items:center}
+    .months a,.months span{width:44px; height:44px; font-size:1rem}
+    table{font-size:1rem}
+    footer{font-size:14px}
+  }
+  .tablewrap{position:relative}
+  .tablewrap::after{content:"→ kaydırın"; position:absolute; top:8px; right:10px; font-size:.75rem;
+    color:var(--ink-soft); background:rgba(243,243,235,.92); padding:3px 8px; border-radius:999px;
+    pointer-events:none}
+  @media (min-width:760px){ .tablewrap::after{display:none} }
 </style>
 </head>
 <body>
@@ -84,7 +106,7 @@
   <p class="eyebrow">Ebeveynler için · Rehber</p>
   <h1>Hangi ay hangi aşı?</h1>
 
-  <video poster="assets/card_asi.png" controls preload="none"
+  <video poster="assets/card_asi.webp" controls preload="none"
          style="display:block; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; margin:0 0 28px"
          aria-label="Boncuk'la 1 Dakika: İğne bir saniyecik — sesli ve altyazılı çocuk videosu">
     <source src="assets/video_asi.mp4" type="video/mp4">

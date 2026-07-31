@@ -69,6 +69,23 @@
   .note{background:var(--paper-2); border-radius:12px; padding:16px 20px; font-size:.92rem; color:var(--ink-soft); margin:44px 0 0}
   footer{max-width:60rem; margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
   @media (max-width:520px){ .pub{grid-template-columns:1fr; gap:4px} .pub .yr{font-size:.95rem} }
+
+  /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
+     13px altı metin bırakma, dokunulan her şey en az 44px olsun. */
+  @media (max-width:640px){
+    .eyebrow{font-size:14px}
+    .glance .lbl{font-size:14px}
+    .months-note{font-size:14px}
+    figcaption{font-size:14px}
+    .note,.sources{font-size:15px}
+    .sources li{margin:10px 0}
+    .sources a{display:inline-block; padding:4px 0}
+    .topbar .go{min-height:44px; display:inline-flex; align-items:center}
+    .topbar .back{min-height:44px; display:inline-flex; align-items:center}
+    .months a,.months span{width:44px; height:44px; font-size:1rem}
+    table{font-size:1rem}
+    footer{font-size:14px}
+  }
 </style>
 </head>
 <body>

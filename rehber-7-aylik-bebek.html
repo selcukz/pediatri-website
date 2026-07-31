@@ -127,6 +127,23 @@
     .endgrid .sources{padding-top:0; border-top:0}
   }
   @media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important} }
+
+  /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
+     13px altı metin bırakma, dokunulan her şey en az 44px olsun. */
+  @media (max-width:640px){
+    .eyebrow{font-size:14px}
+    .glance .lbl{font-size:14px}
+    .months-note{font-size:14px}
+    figcaption,.fig figcaption{font-size:14px}
+    .note,.sources{font-size:15px}
+    .sources li{margin:10px 0}
+    .sources a{display:inline-block; padding:4px 0}
+    .topbar .go{min-height:44px; display:inline-flex; align-items:center}
+    .topbar .back{min-height:44px; display:inline-flex; align-items:center}
+    .months a,.months span{width:44px; height:44px; font-size:1rem}
+    table{font-size:1rem}
+    footer{font-size:14px}
+  }
 </style>
 </head>
 <body>
@@ -210,9 +227,8 @@
 
   <div class="tablo">
     <figure class="tablo-frame" style="margin:0">
-      <video src="assets/video_7ay_tablo.mp4" poster="assets/poster_7ay_tablo.webp"
-             autoplay muted loop playsinline preload="metadata"
-             aria-label="Rönesans panosu üslubunda sessiz kısa film: yedi aylık bir bebek, kemerli bir pencerenin yanında yastığın üzerinde desteksiz oturur ve ahşap çıngırağını tutar; annesi yanında oturmuş ona bakar, pencereden Toskana manzarası görünür"></video>
+      <video data-ambient src="assets/video_7ay_tablo.mp4" poster="assets/poster_7ay_tablo.webp" muted loop playsinline
+             aria-label="Rönesans panosu üslubunda sessiz kısa film: yedi aylık bir bebek, kemerli bir pencerenin yanında yastığın üzerinde desteksiz oturur ve ahşap çıngırağını tutar; annesi yanında oturmuş ona bakar, pencereden Toskana manzarası görünür" preload="none"></video>
     </figure>
     <div class="tablo-text">
       <h2>Oturmak: dünyaya yeni bir açı</h2>
@@ -424,5 +440,6 @@
 
 <footer>Uzm. Dr. Aslı Ece Zeybek · Çocuk Sağlığı ve Hastalıkları Uzmanı · Son güncelleme: Temmuz 2026</footer>
 
+<script src="assets/mobil-video.js" defer></script>
 </body>
 </html>
