@@ -273,6 +273,47 @@
   .pub-cta:hover .pub-cta-ar{transform:translateX(5px)}
   @media (max-width:480px){ .pub-cta{width:100%} .pub-cta-ar{margin-left:auto} }
 
+  /* ---------- AY AY ŞERİDİ: ilk yılın cetveli ----------
+     Sitenin "büyüme eğrisi" fikri burada gerçek bir işe yarıyor: aylar
+     ölçülebilir bir dizi olduğu için şerit bir mezura gibi kuruluyor.
+     Her karo kendi çizgi parçasını ve tırnağını taşır; böylece satır
+     kaç sütuna sararsa sarsın cetvel kesintisiz görünür. */
+  .aylar{margin-top:40px; background:var(--paper-2); border:1px solid rgba(39,51,48,.10);
+    border-radius:24px; padding:clamp(22px,3vw,38px)}
+  .aylar-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px}
+  .aylar-head h3{font-family:var(--disp); font-weight:800; font-size:clamp(1.25rem,2.1vw,1.65rem);
+    letter-spacing:-.01em; margin:0}
+  .aylar-head .durum{margin-left:auto; font-family:var(--mono); font-size:.74rem; letter-spacing:.05em;
+    color:var(--sage-deep); background:rgba(137,173,146,.20); border:1px solid rgba(95,138,108,.35);
+    padding:5px 12px; border-radius:999px; white-space:nowrap}
+  .aylar .aciklama{color:var(--ink-soft); font-size:.97rem; margin:10px 0 0; max-width:64ch}
+  .serit{display:grid; grid-template-columns:repeat(12,1fr); gap:10px; margin-top:34px}
+  .ay{position:relative; display:flex; flex-direction:column; align-items:center; gap:5px;
+    text-decoration:none; color:inherit; background:var(--paper);
+    border:1px solid rgba(39,51,48,.09); border-radius:13px; padding:15px 7px 13px; text-align:center;
+    transition:transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease, border-color .22s ease}
+  /* mezura: her karonun üstündeki çizgi parçası boşlukları kapatıp birleşir */
+  .ay::after{content:""; position:absolute; top:-12px; left:-5px; right:-5px; height:1.5px;
+    background:var(--sage); opacity:.55}
+  .ay::before{content:""; position:absolute; top:-12px; left:50%; width:1.5px; height:9px;
+    background:var(--sage-deep); opacity:.75}
+  .ay .no{font-family:var(--disp); font-weight:800; font-size:clamp(1.45rem,2.3vw,1.95rem);
+    line-height:1; color:var(--sage-deep)}
+  .ay .beat{font-size:.75rem; line-height:1.25; color:var(--ink-soft)}
+  .ay:hover{transform:translateY(-4px); box-shadow:0 12px 24px rgba(39,51,48,.12); border-color:var(--sage)}
+  .ay:focus-visible{outline:3px solid var(--sage-deep); outline-offset:3px}
+  /* en yeni ay: tek sıcak vurgu */
+  .ay.yeni{border-color:var(--apricot); background:#FDF3E9}
+  .ay.yeni .no{color:#C2703A}
+  /* henüz yayımlanmamış aylar */
+  .ay.bekliyor{background:transparent; border-style:dashed; border-color:rgba(39,51,48,.18); cursor:default}
+  .ay.bekliyor .no{color:rgba(87,99,93,.45)}
+  .ay.bekliyor .beat{color:rgba(87,99,93,.65)}
+  @media (max-width:1180px){ .serit{grid-template-columns:repeat(6,1fr); row-gap:30px} }
+  @media (max-width:720px){ .serit{grid-template-columns:repeat(4,1fr)} .ay .beat{font-size:.72rem} }
+  @media (max-width:430px){ .serit{grid-template-columns:repeat(3,1fr)} }
+  @media (prefers-reduced-motion:reduce){ .ay{transition:none} .ay:hover{transform:none} }
+
   /* ebeveyn soruları — temalı gruplar; her kart bir rehbere açılır */
   .cards-group{margin-top:44px}
   .cards-group .group-t{font-family:var(--disp); font-weight:700; font-size:1.05rem; color:var(--ink);
@@ -509,59 +550,34 @@
         Muayenede en çok sorulan sorular, sade ve güven veren cevaplarla.
       </p>
 
+      <!-- AY AY ŞERİDİ: 12 ayın tamamı tek çerçevede, mezura gibi -->
+      <section class="aylar reveal" aria-labelledby="aylar-baslik">
+        <div class="aylar-head">
+          <h3 id="aylar-baslik">Ay ay bebek rehberi</h3>
+          <span class="durum">1–10. ay yayında</span>
+        </div>
+        <p class="aciklama">Bebeğiniz kaçıncı ayındaysa o sayfayı açın: o ayın gelişim
+        basamakları, beslenmesi, uykusu, aşıları ve güvenlik başlıkları bir arada.</p>
+
+        <nav class="serit" aria-label="Aylara göre bebek rehberi">
+          <a class="ay" href="rehber-1-aylik-bebek.html"><span class="no">1</span><span class="beat">İlk günler</span></a>
+          <a class="ay" href="rehber-2-aylik-bebek.html"><span class="no">2</span><span class="beat">Gülümseme</span></a>
+          <a class="ay" href="rehber-3-aylik-bebek.html"><span class="no">3</span><span class="beat">Baş kontrolü</span></a>
+          <a class="ay" href="rehber-4-aylik-bebek.html"><span class="no">4</span><span class="beat">Uzanma</span></a>
+          <a class="ay" href="rehber-5-aylik-bebek.html"><span class="no">5</span><span class="beat">Ağızla keşif</span></a>
+          <a class="ay" href="rehber-6-aylik-bebek.html"><span class="no">6</span><span class="beat">Ek gıda</span></a>
+          <a class="ay" href="rehber-7-aylik-bebek.html"><span class="no">7</span><span class="beat">Oturma</span></a>
+          <a class="ay" href="rehber-8-aylik-bebek.html"><span class="no">8</span><span class="beat">Emekleme</span></a>
+          <a class="ay" href="rehber-9-aylik-bebek.html"><span class="no">9</span><span class="beat">Tutunma</span></a>
+          <a class="ay yeni" href="rehber-10-aylik-bebek.html"><span class="no">10</span><span class="beat">Denge</span></a>
+          <span class="ay bekliyor"><span class="no">11</span><span class="beat">Yakında</span></span>
+          <span class="ay bekliyor"><span class="no">12</span><span class="beat">Yakında</span></span>
+        </nav>
+      </section>
+
       <div class="cards-group">
         <h3 class="group-t">Bebeğinizin ilk yılı</h3>
         <div class="cards">
-          <a class="card reveal" href="rehber-1-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_1ay.png" alt="Boncuk kundaklanmış minik ayıcığı kucağında sallıyor, yanında örgüden kocaman bir 1 rakamı"></div>
-            <h3>1 aylık bebek: ne beklemeli?</h3><p>Ay ay rehberin ilk sayfası: gelişim, beslenme kuralları, güvenli uyku ve oyun.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
-          <a class="card reveal" href="rehber-2-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_2ay.png" alt="Boncuk gülümseyen minik ayıcığı kucaklıyor, yanında örgüden kocaman bir 2 rakamı"></div>
-            <h3>2 aylık bebek: ne beklemeli?</h3><p>Sosyal gülümseme, 2. ay aşıları, uyku ritmi ve beyin gelişimini destekleyen oyunlar.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
-          <a class="card reveal" href="rehber-3-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_3ay.png" alt="Boncuk üç gülüşen minik ayıcık kardeşle birlikte, yanında örgüden kocaman bir 3 rakamı"></div>
-            <h3>3 aylık bebek: ne beklemeli?</h3><p>Baş kontrolü, ilk kahkahalar, uyku ritmi ve beyin gelişimini destekleyen oyunlar.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
-          <a class="card reveal" href="rehber-4-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_4ay.png" alt="Boncuk ve minik ördek yavrusu Vak yan yana, yanlarında örgüden kocaman bir 4 rakamı"></div>
-            <h3>4 aylık bebek: ne beklemeli?</h3><p>Uzanma ve kavrama, 4. ay aşıları, uyku dalgalanması ve beyin gelişimini destekleyen oyunlar.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
-          <a class="card reveal" href="rehber-5-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_5ay.png" alt="Boncuk ve ahşap diş kaşıyıcısını ağzına götüren minik ayıcık, yanlarında örgüden kocaman bir 5 rakamı"></div>
-            <h3>5 aylık bebek: ne beklemeli?</h3><p>Ağızla keşif, iki yönde yuvarlanma, destekle oturma ve beyin gelişimini destekleyen oyunlar.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
-          <a class="card reveal" href="rehber-6-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_6ay.png" alt="Boncuk ve ördek yavrusu Vak yan yana, yanlarında örgüden kocaman bir 6 rakamı"></div>
-            <h3>6 aylık bebek: ne beklemeli?</h3><p>Ek gıdaya başlangıç, 6. ay aşıları, desteksiz oturma ve beyin gelişimini destekleyen oyunlar.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
-          <a class="card reveal" href="rehber-7-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_7ay.webp" alt="Rönesans panosu üslubunda tablo: yastığın üzerinde desteksiz oturan yedi aylık bebek ve annesi"></div>
-            <h3>7 aylık bebek: ne beklemeli?</h3><p>Desteksiz oturma, emekleme denemeleri, 2–3 öğün ek gıda ve demir, ilk diş ve ev güvenliği.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
-          <a class="card reveal" href="rehber-8-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_8ay.webp" alt="Selçuklu mina'i çinisi üslubunda sahne: emekleyerek annesine yaklaşan sekiz aylık bebek"></div>
-            <h3>8 aylık bebek: ne beklemeli?</h3><p>Emekleme, tutunarak ayağa kalkma, kıskaç kavrama, parmak yemekleri ve ev güvenliği.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
-          <a class="card reveal" href="rehber-9-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_9ay.webp" alt="El boyaması animasyon üslubunda sahne: dokuz aylık bebek mobilyaya tutunarak annesine doğru yan adımlar atıyor"></div>
-            <h3>9 aylık bebek: ne beklemeli?</h3><p>Tutunarak yürüme, el sallama ve işaret etme, 9. ay muayenesi ve kansızlık taraması.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
-          <a class="card reveal" href="rehber-10-aylik-bebek.html">
-            <div class="card-art"><img src="assets/card_10ay.webp" alt="Kırmızı tebeşirle çizilmiş etüt: on aylık bebek kollarını açarak desteksiz durmayı deniyor"></div>
-            <h3>10 aylık bebek: ne beklemeli?</h3><p>Desteksiz durma denemeleri, olgun kıskaç kavrama, işaret etme ve tırmanan bebek için ev güvenliği.</p>
-            <span class="more">Rehberi oku →</span>
-          </a>
           <a class="card reveal" href="rehber-yenidogan-izlemi.html">
             <div class="card-art"><img src="assets/card_yenidogan.png" alt="Boncuk, kundaklanmış yenidoğan oyuncak ayıyı ay ışığında kucaklıyor"></div>
             <h3>Yenidoğan ve bebek izlemi</h3><p>İlk günler, sarılık, göbek bakımı, emzirme sıklığı ve güvenli uyku.</p>
