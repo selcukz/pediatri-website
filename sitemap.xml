@@ -1,11 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--
+  Paired TR/EN pages carry xhtml:link hreflang annotations in BOTH directions,
+  which is how Google is told to serve the right language to the right visitor.
+  Every page in a pair must list the whole set (itself included) plus x-default.
+  /en/guide-summer-child-health-turkey.html is English-first and has no Turkish
+  twin yet — if one is written, add the pair here as well.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ============ HOME (paired) ============ -->
   <url>
     <loc>https://aslidoktor.com/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aslidoktor.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aslidoktor.com/"/>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://aslidoktor.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aslidoktor.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aslidoktor.com/"/>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ============ ENGLISH GUIDES ============ -->
+  <url>
+    <loc>https://aslidoktor.com/en/guide-child-fever-turkey.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aslidoktor.com/rehber-gece-atesi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-child-fever-turkey.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aslidoktor.com/rehber-gece-atesi.html"/>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/en/guide-child-diarrhoea-vomiting-turkey.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aslidoktor.com/rehber-ishal-kusma.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-child-diarrhoea-vomiting-turkey.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aslidoktor.com/rehber-ishal-kusma.html"/>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/en/guide-summer-child-health-turkey.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-summer-child-health-turkey.html"/>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/en/guide-vaccination-schedule-turkey.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aslidoktor.com/rehber-asi-takvimi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-vaccination-schedule-turkey.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aslidoktor.com/rehber-asi-takvimi.html"/>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ============ TURKISH GUIDES WITH AN ENGLISH TWIN ============ -->
+  <url>
+    <loc>https://aslidoktor.com/rehber-gece-atesi.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aslidoktor.com/rehber-gece-atesi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-child-fever-turkey.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aslidoktor.com/rehber-gece-atesi.html"/>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/rehber-ishal-kusma.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aslidoktor.com/rehber-ishal-kusma.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-child-diarrhoea-vomiting-turkey.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aslidoktor.com/rehber-ishal-kusma.html"/>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/rehber-asi-takvimi.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aslidoktor.com/rehber-asi-takvimi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-vaccination-schedule-turkey.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aslidoktor.com/rehber-asi-takvimi.html"/>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ============ TURKISH-ONLY PAGES ============ -->
+  <url>
+    <loc>https://aslidoktor.com/rehber-yenidogan-izlemi.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/rehber-ilk-muayene.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/rehber-beslenme.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/rehber-dis-cikarma.html</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/rehber-uyku-duzeni.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/rehber-buyume-gelisme.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/rehber-cocukluk-enfeksiyonlari.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aslidoktor.com/yayinlar.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============ AGE-BAND HUB PAGES ============ -->
+  <url>
+    <loc>https://aslidoktor.com/rehber-1-3-yas.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ============ MONTH-BY-MONTH BABY GUIDES ============ -->
   <url>
     <loc>https://aslidoktor.com/rehber-1-aylik-bebek.html</loc>
     <lastmod>2026-07-20</lastmod>
@@ -62,86 +209,21 @@
   </url>
   <url>
     <loc>https://aslidoktor.com/rehber-10-aylik-bebek.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aslidoktor.com/en/</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/en/guide-vaccination-schedule-turkey.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://aslidoktor.com/rehber-11-aylik-bebek.html</loc>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aslidoktor.com/yayinlar.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-gece-atesi.html</loc>
-    <lastmod>2026-07-09</lastmod>
+    <loc>https://aslidoktor.com/rehber-12-aylik-bebek.html</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-asi-takvimi.html</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-ilk-muayene.html</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-beslenme.html</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-dis-cikarma.html</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-uyku-duzeni.html</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-ishal-kusma.html</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-buyume-gelisme.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-cocukluk-enfeksiyonlari.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aslidoktor.com/rehber-yenidogan-izlemi.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
 </urlset>

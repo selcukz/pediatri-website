@@ -65,7 +65,7 @@
   .topbar .go{background:var(--seftali); color:#fff; text-decoration:none; font-family:var(--disp);
     font-weight:700; font-size:.92rem; padding:9px 18px; border-radius:999px; box-shadow:0 3px 0 rgba(0,0,0,.16); flex-shrink:0}
   .topbar .go:focus-visible,.topbar .back:focus-visible{outline:3px solid var(--gok); outline-offset:2px}
-  article{max-width:min(1240px,100%); margin:0 auto; padding:clamp(28px,5vh,56px) clamp(20px,3.5vw,72px) 40px}
+  article{max-width:min(2200px,100%); margin:0 auto; padding:clamp(28px,5vh,56px) clamp(20px,3.5vw,72px) 40px}
   .eyebrow{font-family:var(--disp); font-weight:700; font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
     color:var(--cayir); margin:0 0 14px}
   h1{font-family:var(--disp); font-weight:700; font-size:clamp(2.1rem,5vw,3.4rem); line-height:1.08;
@@ -88,7 +88,7 @@
   .sources{margin-top:44px; padding-top:20px; border-top:1px solid rgba(74,143,199,.3); font-size:.92rem; color:var(--ink-soft)}
   .sources h2{font-size:1.2rem; margin-top:0; padding-bottom:0}
   .sources h2::after{display:none}
-  footer{max-width:min(1240px,100%); margin:0 auto; padding:0 clamp(20px,3.5vw,72px) 56px; font-size:.85rem; color:var(--ink-soft)}
+  footer{max-width:min(2200px,100%); margin:0 auto; padding:0 clamp(20px,3.5vw,72px) 56px; font-size:.85rem; color:var(--ink-soft)}
   /* bir bakışta çipleri */
   .glance{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:20px 0}
   .glance .chip{background:#fff; border:1px solid rgba(74,143,199,.28); border-radius:18px;
@@ -115,6 +115,33 @@
   /* ikinci sahne — ana videodan küçük, yanında başlığıyla duran yardımcı kare */
   .sahne-solo{margin:32px 0 40px; max-width:560px}
   .sahne-solo figcaption{margin-top:12px; font-size:.88rem; color:var(--ink-soft)}
+
+  /* ---------- GENIS EKRAN: dergi duzeni ----------
+     Sayfa ortada dar bir serit halinde kalmaz; bolumler yan yana dizilir ve
+     sutun sayisi arttikca satir uzunlugu okunur aralikta kalir. */
+  .blk{min-width:0; break-inside:avoid}
+  .blk>:first-child{margin-top:0}
+  .blk>h2:first-child{margin-top:0}
+  .blk--wide>p{max-width:88ch}
+  .callout>p{max-width:88ch}
+  @media (min-width:1100px){
+    .intro{display:grid; grid-template-columns:1.06fr 1fr; gap:clamp(32px,3.4vw,76px); align-items:start}
+    .intro-b h2{margin-top:0}
+    .intro-b .glance{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+    .body{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:clamp(30px,2.8vw,60px) clamp(34px,3.2vw,72px); align-items:start; margin-top:clamp(32px,4vh,52px)}
+    .blk--wide{grid-column:1 / -1}
+    .blk--media{margin-top:0}
+    /* tek sutuna dusen yardimci gorsel: kare ustte, aciklama altta */
+    .blk:not(.blk--wide) .sahne-solo{display:block; max-width:none; margin:0}
+    .blk:not(.blk--wide) .sahne-solo figcaption{margin-top:10px}
+  }
+  @media (min-width:1700px){
+    .body{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .blk--dev .cols2{columns:4}
+    .callout ul{columns:3}
+    .anne p{columns:3; column-gap:clamp(32px,3vw,64px); max-width:none}
+  }
   @media (min-width:1100px){
     .cols2{columns:2; column-gap:clamp(32px,3vw,64px)}
     .cols2>li,.cols2 .mgroup{break-inside:avoid}
@@ -160,7 +187,9 @@
 </header>
 
 <article>
-  <p class="eyebrow">Ebeveynler için · Ay Ay Bebek Rehberi</p>
+  <div class="intro">
+  <div class="intro-a">
+<p class="eyebrow">Ebeveynler için · Ay Ay Bebek Rehberi</p>
   <h1>9 aylık bebek: bu ay sizi ne bekliyor?</h1>
 
   <p class="lead">Dokuzuncu ay, bebeğinizin ayağa kalkıp <strong>mobilyaya tutunarak
@@ -181,11 +210,14 @@
     <a href="rehber-8-aylik-bebek.html">8</a>
     <a class="now" href="rehber-9-aylik-bebek.html" aria-current="page">9</a>
     <a href="rehber-10-aylik-bebek.html">10</a>
-    <span title="Yakında">11</span><span title="Yakında">12</span>
+    <a href="rehber-11-aylik-bebek.html">11</a>
+    <a href="rehber-12-aylik-bebek.html">12</a>
   </nav>
-  <p class="months-note">Diğer ayların sayfaları hazırlandıkça buraya eklenecek.</p>
+  <p class="months-note">Serinin on iki ayı da tamamlandı.</p>
+  </div>
 
-  <h2>Bir bakışta 9. ay</h2>
+  <div class="intro-b">
+<h2>Bir bakışta 9. ay</h2>
   <div class="glance">
     <div class="chip"><div class="big">9. ay muayenesi</div><div class="lbl">gelişim değerlendirmesi<br>+ kansızlık taraması</div></div>
     <div class="chip"><div class="big">12–15 sa</div><div class="lbl">günlük uyku,<br>2 şekerleme</div></div>
@@ -193,8 +225,13 @@
     <div class="chip"><div class="big">3 öğün + 2 ara</div><div class="lbl">parmak yemekleri,<br>açık bardak</div></div>
     <div class="chip"><div class="big">KKK ek dozu</div><div class="lbl">9. ayın sonunda,<br>tüm bebeklere</div></div>
   </div>
+  </div>
+  </div>
 
-  <h2>Gelişim: bu ay bebeğiniz ne yapar?</h2>
+  <div class="body">
+
+  <section class="blk blk--wide blk--dev">
+<h2>Gelişim: bu ay bebeğiniz ne yapar?</h2>
   <p>Aşağıdakiler çoğu bebeğin 9. ay boyunca yaptıklarıdır. Her bebek kendi hızında
   ilerler; birkaç hafta erken ya da geç olması çoğu zaman normaldir.</p>
 
@@ -245,8 +282,10 @@
   </ul>
   </div>
   </div>
+  </section>
 
-  <div class="sahne">
+  <section class="blk blk--wide blk--media">
+<div class="sahne">
     <figure class="sahne-frame" style="margin:0">
       <video data-ambient src="assets/video_9ay_anime.mp4" poster="assets/poster_9ay_anime.webp" muted loop playsinline
              aria-label="El boyaması Japon animasyonu üslubunda sessiz kısa film: dokuz aylık bir bebek alçak masaya tutunarak ayağa kalkar, yan adımlarla annesine doğru ilerler ve gülerek el sallar" preload="none"></video>
@@ -270,8 +309,10 @@
       });
     })();
   </script>
+  </section>
 
-  <h2>Bu ayın durağı: 9. ay sağlam çocuk muayenesi</h2>
+  <section class="blk">
+<h2>Bu ayın durağı: 9. ay sağlam çocuk muayenesi</h2>
   <p>Dokuzuncu ay, ay ay izlemin en kapsamlı duraklarından biridir. Muayenede
   genellikle şunlar yapılır:</p>
   <ul class="cols2">
@@ -293,8 +334,10 @@
   aklınıza gelen soruları önceden yazmak, muayenede hiçbirini unutmamanızı sağlar.</p>
   <p>Ne beklendiğine dair ayrıntı için: <a href="rehber-ilk-muayene.html">İlk muayenede bizi ne bekliyor?</a>
   ve <a href="rehber-buyume-gelisme.html">Büyüme ve gelişme takibi</a>.</p>
+  </section>
 
-  <h2>Beslenme: 3 öğün, ara öğünler ve kendi eliyle yemek</h2>
+  <section class="blk">
+<h2>Beslenme: 3 öğün, ara öğünler ve kendi eliyle yemek</h2>
   <p>Düzen bu ayda <strong>günde 3 öğün ve 1–2 ara öğüne</strong> oturur. Anne sütü
   ya da mama 1 yaşına kadar <strong>birincil besin kaynağı olmayı sürdürür</strong>.</p>
   <ul>
@@ -314,8 +357,10 @@
     <li>Bebek her zaman <strong>dik oturur pozisyonda ve gözetim altında</strong> yemeli.</li>
   </ul>
   <p>Ayrıntı için: <a href="rehber-beslenme.html">Ek gıdaya nasıl başlarız?</a></p>
+  </section>
 
-  <h2>Uyku</h2>
+  <section class="blk">
+<h2>Uyku</h2>
   <p>Toplam uyku günde 12–15 saat, gündüz uykuları <strong>2 şekerleme</strong>
   (sabah ve öğleden sonra) olarak yerleşir. Ayağa kalkma ve tutunarak yürüme
   provaları geceye taşabilir; bebeğin beşikte ayağa kalkıp geri oturmayı öğrenmesi
@@ -327,8 +372,10 @@
     <li>İlk 12 ay için önerilen düzen: <strong>aynı odada, kendi yatağında</strong>.</li>
   </ul>
   <p>Ayrıntı için: <a href="rehber-uyku-duzeni.html">Çocuklarda uyku düzeni rehberi</a>.</p>
+  </section>
 
-  <h2>Ayakta duran bebek için güvenlik</h2>
+  <section class="blk">
+<h2>Ayakta duran bebek için güvenlik</h2>
   <ul class="cols2">
     <li>Mobilya, kitaplık ve televizyonu <strong>duvara sabitleyin</strong>;
         çekmeceler basamak olarak kullanılabilir.</li>
@@ -340,8 +387,10 @@
     <li>Küvette ve su dolu kaplarda <strong>bir saniye bile yalnız bırakmayın</strong>.</li>
     <li><strong>Yürüteç önerilmez;</strong> zeminde çıplak ayak ya da kaymaz çorap en iyisidir.</li>
   </ul>
+  </section>
 
-  <h2>Oyun ve beyin gelişimi</h2>
+  <section class="blk">
+<h2>Oyun ve beyin gelişimi</h2>
   <ul class="cols2">
     <li><strong>İşaret et ve adlandır:</strong> "kuş", "top", "ışık" — bebeğin
         bakışını takip ederek adlandırmak kelime dağarcığının temelidir.</li>
@@ -354,8 +403,10 @@
     <li><strong>Kitap:</strong> kalın sayfalı, tek nesneli resimler; bebeğin işaret
         etmesine izin verin. <strong>Ekran</strong> 18–24 aydan önce önerilmez.</li>
   </ul>
+  </section>
 
-  <h2>Bu ayın aşısı: KKK ek dozu</h2>
+  <section class="blk">
+<h2>Bu ayın aşısı: KKK ek dozu</h2>
   <p><strong>9. ayın sonunda KKK (kızamık–kızamıkçık–kabakulak) ek dozu</strong>
   uygulanır. Bu doz, ülkemizde kızamık vakalarının kontrol altında tutulması için
   Bağışıklama Danışma Kurulu kararıyla <strong>9–11 ay aralığındaki tüm bebeklere
@@ -375,8 +426,10 @@
   </ul>
   <p>Aşı karnesini muayeneye götürmeyi unutmayın. Tam takvim için:
   <a href="rehber-asi-takvimi.html">Hangi ay hangi aşı?</a></p>
+  </section>
 
-  <h2>Bu ayın kontrol listesi</h2>
+  <section class="blk">
+<h2>Bu ayın kontrol listesi</h2>
   <ul class="cols2">
     <li><strong>9. ay muayenesi</strong> randevusunu alın; aşı karnesini ve soru
         listenizi götürün.</li>
@@ -389,8 +442,10 @@
     <li>Dişleri günde iki kez florürlü macunla fırçalayın.</li>
     <li>Biberondan <strong>açık bardağa</strong> geçişi başlatın.</li>
   </ul>
+  </section>
 
-  <div class="callout">
+  <section class="blk blk--wide">
+<div class="callout">
     <h2>Ne zaman hekime başvurmalı?</h2>
     <ul>
       <li><strong>38°C ve üzeri ateş.</strong></li>
@@ -408,16 +463,20 @@
     sonrası kusma veya uyanmama</strong> gecikmeden <strong>112</strong>'yi gerektirir.
     Gece gelişen ateş için: <a href="rehber-gece-atesi.html">Gece ateş rehberi</a>.</p>
   </div>
+  </section>
 
-  <figure class="sahne-solo">
+  <section class="blk">
+<figure class="sahne-solo">
     <div class="sahne-frame">
       <video data-ambient src="assets/video_9ay_anime2.mp4" poster="assets/poster_9ay_anime2.webp" muted loop playsinline
              aria-label="El boyaması animasyon üslubunda ikinci sessiz kısa film: dokuz aylık bir bebek gülümseyerek annesinin açılan kollarına doğru ilerliyor" preload="none"></video>
     </div>
     <figcaption>Dokuzuncu ayın en tanıdık sahnesi: açılan iki kola doğru gitmek.</figcaption>
   </figure>
+  </section>
 
-  <h2>Anneye not</h2>
+  <section class="blk blk--wide anne">
+<h2>Anneye not</h2>
   <p>Dokuzuncu ayda evin içi bir anda küçülür: bebeğiniz artık ayakta, elleri
   serbest ve merakı sizden hızlı. Bu ay çok "hayır" demek zorunda kalıyorsanız,
   sorun bebeğin inadı değil, evin henüz ona göre düzenlenmemiş olmasıdır — güvenli
@@ -426,8 +485,10 @@
   bilgiyi verir. İki haftadan uzun süren yoğun hüzün, sürekli ağlama isteği ya da
   bebeğe karşı ilgisizlik hissi doğum sonrası depresyonun işareti olabilir;
   tedavi edilebilir bir durumdur — hekiminizle paylaşın.</p>
+  </section>
 
-  <div class="endgrid">
+  <section class="blk blk--wide">
+<div class="endgrid">
   <div class="note">
     Bu rehber genel bilgilendirme amaçlıdır ve muayenenin yerini tutmaz. Her bebek
     kendi hızında gelişir; buradaki basamaklar çoğunluğun aralığıdır. Bebeğinizle
@@ -445,6 +506,10 @@
     </ul>
   </div>
   </div>
+  </section>
+
+  </div><!-- .body -->
+
 </article>
 
 <footer>Uzm. Dr. Aslı Ece Zeybek · Çocuk Sağlığı ve Hastalıkları Uzmanı · Son güncelleme: Temmuz 2026</footer>

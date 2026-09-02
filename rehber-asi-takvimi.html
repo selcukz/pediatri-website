@@ -6,8 +6,11 @@
 <title>2026 çocuk aşı takvimi: hangi ay hangi aşı yapılır? | Uzm. Dr. Aslı Ece Zeybek</title>
 <meta name="description" content="2026 Ulusal Çocukluk Dönemi Aşılama Takvimi: doğumdan 13 yaşa hangi ay hangi aşı yapılır? Rutin dışı aşılar (rotavirüs, meningokok, grip, HPV) hakkında sakin bir rehber.">
 <link rel="canonical" href="https://aslidoktor.com/rehber-asi-takvimi.html">
+<link rel="alternate" hreflang="tr" href="https://aslidoktor.com/rehber-asi-takvimi.html">
+<link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-vaccination-schedule-turkey.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:title" content="2026 çocuk aşı takvimi: hangi ay hangi aşı yapılır?">
 <meta property="og:description" content="Ulusal aşı takvimi ve rutin dışı aşılar, ebeveyn diliyle.">
 <meta property="og:url" content="https://aslidoktor.com/rehber-asi-takvimi.html">
@@ -49,7 +52,7 @@
   .topbar .go{background:var(--apricot); color:var(--apricot-ink); text-decoration:none; font-family:var(--disp);
     font-weight:700; font-size:.92rem; padding:9px 18px; border-radius:999px; box-shadow:0 3px 0 rgba(0,0,0,.14); flex-shrink:0}
   .topbar .go:focus-visible,.topbar .back:focus-visible{outline:3px solid var(--sage-deep); outline-offset:2px}
-  article{max-width:78ch; margin:0 auto; padding:clamp(40px,7vh,80px) clamp(20px,4vw,44px) 40px}
+  article{max-width:min(2200px,100%); margin:0 auto; padding:clamp(40px,7vh,80px) clamp(20px,4vw,44px) 40px}
   .eyebrow{font-family:var(--disp); font-weight:600; font-size:13px; letter-spacing:.09em; text-transform:uppercase; color:var(--sage-deep); margin:0 0 14px}
   h1{font-family:var(--disp); font-weight:800; font-size:clamp(1.9rem,4.5vw,3rem); line-height:1.05; letter-spacing:-.02em; margin:0 0 18px}
   h2{font-family:var(--disp); font-weight:700; font-size:clamp(1.25rem,2.4vw,1.6rem); margin:44px 0 12px}
@@ -69,7 +72,7 @@
   .note{background:var(--paper-2); border-radius:12px; padding:16px 20px; font-size:.95rem; color:var(--ink-soft); margin:36px 0}
   .sources{margin-top:44px; padding-top:20px; border-top:1px solid rgba(39,51,48,.12); font-size:.92rem; color:var(--ink-soft)}
   .sources h2{font-size:1.05rem; margin-top:0}
-  footer{max-width:78ch; margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
+  footer{max-width:min(2200px,100%); margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
   @media (max-width:560px){ .art{float:none; width:56%; margin:0 auto 20px} }
 
   /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
@@ -93,6 +96,36 @@
     color:var(--ink-soft); background:rgba(243,243,235,.92); padding:3px 8px; border-radius:999px;
     pointer-events:none}
   @media (min-width:760px){ .tablewrap::after{display:none} }
+
+  /* ---------- GENIS EKRAN: dergi duzeni ----------
+     Sayfa ortada dar bir serit halinde kalmaz; bolumler yan yana dizilir ve
+     sutun sayisi arttikca satir uzunlugu okunur aralikta kalir. */
+  .lead{max-width:88ch}
+  .blk{min-width:0; break-inside:avoid}
+  .blk>:first-child{margin-top:0}
+  .blk .callout,.blk .note,.blk .sources,.blk .tablewrap{margin-top:0}
+  .blk--wide>p{max-width:88ch}
+  @media (min-width:1100px){
+    .intro{display:grid; grid-template-columns:1.08fr 1fr; gap:clamp(32px,3.4vw,72px); align-items:start}
+    .intro-a>:first-child{margin-top:0}
+    .intro-b>:first-child{margin-top:0}
+    .intro-b video{margin:0}
+    .body{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:clamp(30px,2.8vw,60px) clamp(34px,3.2vw,72px); align-items:start; margin-top:clamp(32px,4vh,52px)}
+    .blk--wide{grid-column:1 / -1}
+  }
+  @media (min-width:1700px){
+    .body{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .callout ul{columns:2; column-gap:clamp(32px,3vw,64px)}
+    .callout li{break-inside:avoid}
+  }
+
+  /* genis bloklarda ic ice metin de okunur satirda kalsin */
+  .blk--wide p{max-width:88ch}
+  @media (min-width:1700px){
+    .blk--wide>ul,.blk--wide>.callout>ul,.blk--wide>.calm>ul{columns:2; column-gap:clamp(32px,3vw,64px)}
+    .blk--wide>ul>li,.blk--wide>.callout>ul>li,.blk--wide>.calm>ul>li{break-inside:avoid}
+  }
 </style>
 </head>
 <body>
@@ -103,23 +136,31 @@
 </header>
 
 <article>
-  <p class="eyebrow">Ebeveynler için · Rehber</p>
-  <h1>Hangi ay hangi aşı?</h1>
+  <div class="intro">
+  <div class="intro-a">
+<p class="eyebrow">Ebeveynler için · Rehber</p>
+<h1>Hangi ay hangi aşı?</h1>
+<p class="lead">Aşılar, çocuğunuzu ağır geçebilecek hastalıklardan koruyan en
+  güçlü araçlardan biri. Türkiye'de ulusal takvimdeki aşılar aile sağlığı
+  merkezlerinde <strong>ücretsiz</strong> uygulanır. İşte sade bir yol haritası.</p>
+<p style="font-size:.92rem"><a href="en/guide-vaccination-schedule-turkey.html" hreflang="en" lang="en">🇬🇧 English guide for international families: Vaccination schedule in Turkey →</a></p>
+  </div>
 
-  <video poster="assets/card_asi.webp" controls preload="none"
+  <div class="intro-b">
+<video poster="assets/card_asi.webp" controls preload="none"
          style="display:block; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; margin:0 0 28px"
          aria-label="Boncuk'la 1 Dakika: İğne bir saniyecik — sesli ve altyazılı çocuk videosu">
     <source src="assets/video_asi.mp4" type="video/mp4">
     <track kind="subtitles" srclang="tr" label="Türkçe" src="assets/video_asi.vtt" default>
   </video>
+  </div>
+  </div>
 
-  <p class="lead">Aşılar, çocuğunuzu ağır geçebilecek hastalıklardan koruyan en
-  güçlü araçlardan biri. Türkiye'de ulusal takvimdeki aşılar aile sağlığı
-  merkezlerinde <strong>ücretsiz</strong> uygulanır. İşte sade bir yol haritası.</p>
 
-  <p style="font-size:.92rem"><a href="en/guide-vaccination-schedule-turkey.html" hreflang="en" lang="en">🇬🇧 English guide for international families: Vaccination schedule in Turkey →</a></p>
+  <div class="body">
 
-  <h2>2026 Ulusal Aşı Takvimi</h2>
+  <section class="blk blk--wide">
+<h2>2026 Ulusal Aşı Takvimi</h2>
   <div class="tablewrap">
     <table>
       <tr><th>Zaman</th><th>Aşılar</th></tr>
@@ -136,8 +177,10 @@
     </table>
   </div>
   <p>Takvimin resmî ve güncel hâli için <a href="https://asi.saglik.gov.tr" target="_blank" rel="noopener">asi.saglik.gov.tr</a> adresine bakabilirsiniz.</p>
+  </section>
 
-  <h2>Takvim dışı ("özel") aşılar</h2>
+  <section class="blk">
+<h2>Takvim dışı ("özel") aşılar</h2>
   <p>Ulusal takvimde olmayan ama Sosyal Pediatri Derneği'nin sağlıklı çocuklar
   için önerdiği aşılar da vardır. Bunlar ücretli olup reçeteyle uygulanır:</p>
   <ul>
@@ -149,13 +192,17 @@
   <p>Hangilerinin çocuğunuz için uygun ve öncelikli olduğunu hekiminizle
   konuşarak birlikte planlayın — özellikle rotavirüs penceresini kaçırmamak için
   bu konuşmayı <strong>2. ay kontrolünde</strong> yapmak idealdir.</p>
+  </section>
 
-  <h2>Aşı sonrası ne beklenir?</h2>
+  <section class="blk">
+<h2>Aşı sonrası ne beklenir?</h2>
   <p>Aşı yerinde hafif kızarıklık ve hassasiyet, bir-iki gün huzursuzluk ve hafif
   ateş sık görülür ve genellikle kendiliğinden geçer. Bol sıvı ve gerekirse
   hekiminizin önerdiği ateş düşürücü yeterlidir.</p>
+  </section>
 
-  <div class="callout">
+  <section class="blk blk--wide">
+<div class="callout">
     <h2>Şu durumlarda hekiminize başvurun</h2>
     <ul>
       <li>39&nbsp;°C üzeri düşmeyen ateş ya da 48 saatten uzun süren huzursuzluk.</li>
@@ -163,14 +210,18 @@
       <li>Yaygın döküntü, dudak-yüz şişmesi, solunum güçlüğü — <strong>acil</strong>.</li>
     </ul>
   </div>
+  </section>
 
-  <div class="note">
+  <section class="blk">
+<div class="note">
     Bu sayfa genel bilgilendirme amaçlıdır; hekim muayenesinin ve size özel aşı
     planlamasının yerini tutmaz. Takviminiz gecikmiş olsa bile telafi şeması her
     zaman mümkündür — çekinmeden başvurun.
   </div>
+  </section>
 
-  <div class="sources">
+  <section class="blk">
+<div class="sources">
     <h2>Güvenilir kaynaklar</h2>
     <ul>
       <li><a href="https://asi.saglik.gov.tr" target="_blank" rel="noopener">T.C. Sağlık Bakanlığı — Aşı Portalı (Ulusal Aşılama Takvimi 2026)</a></li>
@@ -178,6 +229,10 @@
       <li><a href="https://www.kuh.ku.edu.tr" target="_blank" rel="noopener">Koç Üniversitesi Hastanesi</a></li>
     </ul>
   </div>
+  </section>
+
+  </div><!-- .body -->
+
 </article>
 
 <footer>Uzm. Dr. Aslı Ece Zeybek · Çocuk Sağlığı ve Hastalıkları Uzmanı · Son güncelleme: Temmuz 2026</footer>

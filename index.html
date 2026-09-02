@@ -309,9 +309,15 @@
   .ay.bekliyor{background:transparent; border-style:dashed; border-color:rgba(39,51,48,.18); cursor:default}
   .ay.bekliyor .no{color:rgba(87,99,93,.45)}
   .ay.bekliyor .beat{color:rgba(87,99,93,.65)}
-  @media (max-width:1180px){ .serit{grid-template-columns:repeat(6,1fr); row-gap:30px} }
-  @media (max-width:720px){ .serit{grid-template-columns:repeat(4,1fr)} .ay .beat{font-size:.72rem} }
-  @media (max-width:430px){ .serit{grid-template-columns:repeat(3,1fr)} }
+  /* yaş bandı şeridi — ilk yıldan sonrası */
+  .serit--yas{grid-template-columns:repeat(5,1fr); margin-top:30px}
+  .serit--yas .no{font-size:clamp(1.02rem,1.6vw,1.35rem); letter-spacing:-.01em}
+  @media (max-width:1180px){ .serit{grid-template-columns:repeat(6,1fr); row-gap:30px}
+    .serit--yas{grid-template-columns:repeat(5,1fr)} }
+  @media (max-width:720px){ .serit{grid-template-columns:repeat(4,1fr)} .ay .beat{font-size:.72rem}
+    .serit--yas{grid-template-columns:repeat(3,1fr)} }
+  @media (max-width:430px){ .serit{grid-template-columns:repeat(3,1fr)}
+    .serit--yas{grid-template-columns:repeat(2,1fr)} }
   @media (prefers-reduced-motion:reduce){ .ay{transition:none} .ay:hover{transform:none} }
 
   /* ebeveyn soruları — temalı gruplar; her kart bir rehbere açılır */
@@ -579,7 +585,7 @@
       <section class="aylar reveal" aria-labelledby="aylar-baslik">
         <div class="aylar-head">
           <h3 id="aylar-baslik">Ay ay bebek rehberi</h3>
-          <span class="durum">1–10. ay yayında</span>
+          <span class="durum">12 ayın tamamı yayında</span>
         </div>
         <p class="aciklama">Bebeğiniz kaçıncı ayındaysa o sayfayı açın: o ayın gelişim
         basamakları, beslenmesi, uykusu, aşıları ve güvenlik başlıkları bir arada.</p>
@@ -594,11 +600,41 @@
           <a class="ay" href="rehber-7-aylik-bebek.html"><span class="no">7</span><span class="beat">Oturma</span></a>
           <a class="ay" href="rehber-8-aylik-bebek.html"><span class="no">8</span><span class="beat">Emekleme</span></a>
           <a class="ay" href="rehber-9-aylik-bebek.html"><span class="no">9</span><span class="beat">Tutunma</span></a>
-          <a class="ay yeni" href="rehber-10-aylik-bebek.html"><span class="no">10</span><span class="beat">Denge</span></a>
-          <span class="ay bekliyor"><span class="no">11</span><span class="beat">Yakında</span></span>
-          <span class="ay bekliyor"><span class="no">12</span><span class="beat">Yakında</span></span>
+          <a class="ay" href="rehber-10-aylik-bebek.html"><span class="no">10</span><span class="beat">Denge</span></a>
+          <a class="ay yeni" href="rehber-11-aylik-bebek.html"><span class="no">11</span><span class="beat">Tekrar</span></a>
+          <a class="ay" href="rehber-12-aylik-bebek.html"><span class="no">12</span><span class="beat">İlk adım</span></a>
         </nav>
       </section>
+
+      <!-- YAŞ BANDI ŞERİDİ: ilk yıldan sonrası — okul çağı ve ergenlik dâhil -->
+      <section class="aylar reveal" aria-labelledby="yaslar-baslik">
+        <div class="aylar-head">
+          <h3 id="yaslar-baslik">Yaş yaş rehber</h3>
+          <span class="durum">1–3 yaş yayında</span>
+        </div>
+        <p class="aciklama">İlk yıl bittiğinde takip bitmez. Her yaş bandının kendi
+        gelişim basamakları, beslenme soruları, aşıları ve riskleri var — çocuğunuzun
+        yaşına denk gelen sayfayı açın.</p>
+
+        <nav class="serit serit--yas" aria-label="Yaşa göre çocuk rehberi">
+          <a class="ay" href="#aylar-baslik"><span class="no">0–1 yaş</span><span class="beat">Bebeklik · ay ay</span></a>
+          <a class="ay yeni" href="rehber-1-3-yas.html"><span class="no">1–3 yaş</span><span class="beat">Oyun çocuğu</span></a>
+          <span class="ay bekliyor"><span class="no">3–6 yaş</span><span class="beat">Okul öncesi</span></span>
+          <span class="ay bekliyor"><span class="no">6–11 yaş</span><span class="beat">Okul çağı</span></span>
+          <span class="ay bekliyor"><span class="no">11–18 yaş</span><span class="beat">Ergenlik</span></span>
+        </nav>
+      </section>
+
+      <div class="cards-group">
+        <h3 class="group-t">İlk yıldan sonra</h3>
+        <div class="cards">
+          <a class="card reveal" href="rehber-1-3-yas.html">
+            <div class="card-art"><img src="assets/card_12ay.webp" alt="Boncuk, yürümeye başlamış bir çocuğun elinden tutuyor" loading="lazy" decoding="async"></div>
+            <h3>1–3 yaş: oyun çocuğu</h3><p>İştah neden düşer, kelimeler ne zaman gelir, tuvalet eğitimi, öfke nöbetleri ve bu yaşın kazaları.</p>
+            <span class="more">Rehberi oku →</span>
+          </a>
+        </div>
+      </div>
 
       <div class="cards-group">
         <h3 class="group-t">Bebeğinizin ilk yılı</h3>
@@ -615,7 +651,7 @@
           </a>
           <a class="card reveal" href="rehber-dis-cikarma.html">
             <div class="card-art"><img src="assets/card_dis.webp" alt="Boncuk, minik dişi çıkan ayıcığa yumuşak diş kaşıyıcı uzatıyor" loading="lazy" decoding="async"></div>
-            <h3>Bebeklerde diş çıkarma</h3><p>Ne zaman başlar, belirtileri neler, nasıl rahatlatılır ve nelerden kaçınılmalı.</p>
+            <h3>Bebeklerde diş çıkarma</h3><p>Ateş yapar mı, gece ağlamaları neden artar, nasıl rahatlatılır ve nelerden kesinlikle kaçınılmalı.</p>
             <span class="more">Rehberi oku →</span>
           </a>
           <a class="card reveal" href="rehber-uyku-duzeni.html">
@@ -664,6 +700,34 @@
             <div class="card-art"><img src="assets/card_enfeksiyon.webp" alt="Boncuk, üşütmüş oyuncak ayıyı battaniyeye sarıp sıcak içecekle bakıyor" loading="lazy" decoding="async"></div>
             <h3>Sık görülen enfeksiyonlar</h3><p>Soğuk algınlığı, boğaz ve kulak: evde bakım, antibiyotik ne zaman, acil belirtiler.</p>
             <span class="more">Rehberi oku →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- İngilizce rehberler: Türkiye'deki yabancı aileler bu sayfaya düştüğünde
+           tek yol gösterici topbar'daki küçük EN çipiydi. Kartlar İngilizce. -->
+      <div class="cards-group" id="english">
+        <h3 class="group-t" lang="en">In English · Guides for international families</h3>
+        <div class="cards" lang="en">
+          <a class="card reveal" href="en/guide-child-fever-turkey.html" hreflang="en">
+            <div class="card-art"><img src="assets/card_gece.webp" alt="Boncuk the otter in a nightcap, keeping watch with a thermometer beside a sleeping teddy bear" loading="lazy" decoding="async"></div>
+            <h3>Child fever at night in Turkey</h3><p>Home care, the red flags that cannot wait, Turkish medicine names, 112 and the duty pharmacy.</p>
+            <span class="more">Read the guide →</span>
+          </a>
+          <a class="card reveal" href="en/guide-child-diarrhoea-vomiting-turkey.html" hreflang="en">
+            <div class="card-art"><img src="assets/card_ishal.webp" alt="Boncuk the otter handing a cup of water with a straw to a resting teddy bear" loading="lazy" decoding="async"></div>
+            <h3>Diarrhoea &amp; vomiting in Turkey</h3><p>Which water to use here, how to get ORS from a pharmacy, and the signs that mean the emergency room.</p>
+            <span class="more">Read the guide →</span>
+          </a>
+          <a class="card reveal" href="en/guide-summer-child-health-turkey.html" hreflang="en">
+            <div class="card-art"><img src="assets/poster_boncuk_1_karsilama.webp" alt="Boncuk the otter waving hello, a stethoscope in one paw" loading="lazy" decoding="async"></div>
+            <h3>Summer: heat, sun and sea</h3><p>Heatstroke, sunburn, sea urchins, jellyfish and bites — and what to buy at a Turkish pharmacy.</p>
+            <span class="more">Read the guide →</span>
+          </a>
+          <a class="card reveal" href="en/guide-vaccination-schedule-turkey.html" hreflang="en">
+            <div class="card-art"><img src="assets/card_asi.webp" alt="Boncuk the otter showing the plaster on his arm, a heart-stamped vaccination calendar behind him" loading="lazy" decoding="async"></div>
+            <h3>Vaccination schedule in Turkey</h3><p>The national schedule month by month, compared with the US/UK/EU — and continuing a schedule started abroad.</p>
+            <span class="more">Read the guide →</span>
           </a>
         </div>
       </div>
@@ -753,10 +817,35 @@
 <script>
   // Reveal (IntersectionObserver)
   (function(){
+    var els=[].slice.call(document.querySelectorAll('.reveal'));
+
+    // Güvenlik ağı: gözlemci yoksa hiçbir bölüm gizli kalmasın.
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{threshold:.16, rootMargin:'0px 0px -8% 0px'});
-    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+    // threshold:0 olmalı. Yüzdelik bir eşik (ör. .16), ekrandan uzun bölümlerde
+    // ASLA karşılanmaz: mobilde kartlar alt alta dizilince #ebeveynler 6493px'e
+    // çıkıyor, ekran ~700px kalıyor, mümkün en yüksek oran %11'de tıkanıyor. Sonuç:
+    // bölüm opacity:0 olarak kalıp yüksekliğini işgal ediyor — sayfada dev bir boşluk.
+    },{threshold:0, rootMargin:'0px 0px -10% 0px'});
+    els.forEach(function(el){io.observe(el)});
+
+    // Süpürme: açılışta ekranda olan ya da sayfa daha yüklenirken hızlıca geçilen
+    // bölümler gözlemcinin ilk çağrısını kaçırabiliyor; gözlemci yalnız DEĞİŞİMDE
+    // tetiklendiği için bir daha da açılmıyorlar. Yüklemede bir kez tarayıp
+    // ekranın altını geçmiş olan her şeyi açıyoruz.
+    function sweep(){
+      els.forEach(function(el){
+        if(el.classList.contains('in')) return;
+        if(el.getBoundingClientRect().top < window.innerHeight){ el.classList.add('in'); io.unobserve(el); }
+      });
+    }
+    window.addEventListener('load', sweep);
+    setTimeout(sweep, 1200);
   })();
 
   // Büyüme eğrisini kaydırmaya göre çiz
@@ -897,6 +986,8 @@
     {t:"5 aylık bebek",c:"5. Ay",u:"rehber-5-aylik-bebek.html",b:"Ağızla keşif, iki yönde yuvarlanma, destekle oturma ve beyin gelişimini destekleyen oyunlar.",k:["5 ay","5 aylik","bes aylik","ağızla kesif","agza goturme","dislenme","dis kasiyici","yuvarlaniyor","donuyor","oturmaya calisiyor","destekle oturma","palmar tutus","kavrama","salyaliyor"]},
     {t:"6 aylık bebek",c:"6. Ay",u:"rehber-6-aylik-bebek.html",b:"Ay ay rehberin 6. sayfası: ek gıdaya başlangıç, 6. ay aşıları, oturma ve oyun.",k:["6 ay","6 aylik","alti aylik","ek gida","ek gidaya baslama","ilk lezzet","pure","balkabagi puresi","desteksiz oturma","karma asi 3","opa asisi","6 ay asi"]},
     {t:"10 aylık bebek",c:"10. Ay",u:"rehber-10-aylik-bebek.html",b:"Ay ay rehberin 10. sayfası: desteksiz durma, kıskaç kavrama, işaret etme ve tırmanma güvenliği.",k:["10 ay","10 aylik","on aylik","10 aylik bebek","desteksiz duruyor","ayakta duruyor","denge","ilk adim","yuruyecek mi","kiskac kavrama","parmak ucu","isaret ediyor","gosteriyor","anne dedi","baba dedi","ilk kelime","tirmaniyor","merdiven","biberondan bardaga","biberon birakma"]},
+    {t:"11 aylık bebek",c:"11. Ay",u:"rehber-11-aylik-bebek.html",b:"Ay ay rehberin 11. sayfası: tekrar neden öğrenmenin kendisidir, jargon, ikinci şekerleme ve 12. aya hazırlık.",k:["11 ay","11 aylik","on bir aylik","11 aylik bebek","tekrar ediyor","ayni seyi tekrar","surekli tekrar","kutuya koyuyor","doldur bosalt","dusuruyor","atiyor","konusuyormus gibi","mirildaniyor","jargon","cigirlik","cigliyor","market","taklit","tarak","telefon","ikinci uyku","sekerleme","ogle uykusu","uyku birakti","kkk ek doz","asi yok"]},
+    {t:"12 aylık bebek",c:"12. Ay",u:"rehber-12-aylik-bebek.html",b:"Ay ay rehberin 12. sayfası: ilk adımlar, ilk kelimeler, inek sütüne geçiş ve 1 yaş aşıları.",k:["12 ay","12 aylik","on iki aylik","1 yas","bir yas","1 yasinda","12 aylik bebek","yuruyor","yurumuyor","ne zaman yurur","ilk adim","ilk adimlar","yurutec","yuruteç","ilk kelime","konusmuyor","kelime soylemiyor","inek sutu","sut verebilir miyim","tam yagli sut","bal verebilir miyim","biberon birakma","bardaga gecis","12 ay asi","kkk","sucicegi","kpa pekistirme","1 yas asisi","dogum gunu","dis hekimi"]},
     {t:"9 aylık bebek",c:"9. Ay",u:"rehber-9-aylik-bebek.html",b:"Ay ay rehberin 9. sayfası: tutunarak yürüme, el sallama, 9. ay muayenesi ve kansızlık taraması.",k:["9 ay","9 aylik","dokuz aylik","9 aylik bebek","tutunarak yuruyor","yan adim","cruising","ilk adim","ne zaman yurur","el salliyor","el sallama","isaret ediyor","alkis","ortak dikkat","9 ay muayenesi","saglam cocuk","hemogram","kansizlik","anemi","kan sayimi","solukluk"]},
     {t:"8 aylık bebek",c:"8. Ay",u:"rehber-8-aylik-bebek.html",b:"Ay ay rehberin 8. sayfası: emekleme, tutunarak ayağa kalkma, parmak yemekleri ve ev güvenliği.",k:["8 ay","8 aylik","sekiz aylik","8 aylik bebek","emekliyor","emekleme","tutunarak ayaga kalkiyor","ayaga kalkiyor","kiskac kavrama","parmak yemegi","parmak yemekleri","kendi yiyor","bardak","ayrilik kaygisi","gece uyaniyor","uyku regresyonu","besik tabani","yurutec","ev guvenligi","3 ogun"]},
     {t:"7 aylık bebek",c:"7. Ay",u:"rehber-7-aylik-bebek.html",b:"Ay ay rehberin 7. sayfası: desteksiz oturma, emekleme, demir, ilk diş ve ev güvenliği.",k:["7 ay","7 aylik","yedi aylik","7 aylik bebek","desteksiz oturma","oturuyor","oturamiyor","emekleme","emekliyor","emeklemiyor","surunme","tirmik kavrama","demir","demir damlasi","demir eksikligi","ayrilik kaygisi","yabanci kaygisi","ilk dis","dis cikti","ev guvenligi","yurutec","dugme pil","2 ogun","3 ogun","kivam","parmak yemegi"]},

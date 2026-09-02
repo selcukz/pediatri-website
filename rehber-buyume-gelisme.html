@@ -48,7 +48,7 @@
   .topbar .go{background:var(--apricot); color:var(--apricot-ink); text-decoration:none; font-family:var(--disp);
     font-weight:700; font-size:.92rem; padding:9px 18px; border-radius:999px; box-shadow:0 3px 0 rgba(0,0,0,.14); flex-shrink:0}
   .topbar .go:focus-visible,.topbar .back:focus-visible{outline:3px solid var(--sage-deep); outline-offset:2px}
-  article{max-width:78ch; margin:0 auto; padding:clamp(40px,7vh,80px) clamp(20px,4vw,44px) 40px}
+  article{max-width:min(2200px,100%); margin:0 auto; padding:clamp(40px,7vh,80px) clamp(20px,4vw,44px) 40px}
   .eyebrow{font-family:var(--disp); font-weight:600; font-size:13px; letter-spacing:.09em; text-transform:uppercase; color:var(--sage-deep); margin:0 0 14px}
   h1{font-family:var(--disp); font-weight:800; font-size:clamp(1.9rem,4.5vw,3rem); line-height:1.05; letter-spacing:-.02em; margin:0 0 18px}
   h2{font-family:var(--disp); font-weight:700; font-size:clamp(1.25rem,2.4vw,1.6rem); margin:44px 0 12px}
@@ -67,7 +67,7 @@
   .note{background:var(--paper-2); border-radius:12px; padding:16px 20px; font-size:.95rem; color:var(--ink-soft); margin:36px 0}
   .sources{margin-top:44px; padding-top:20px; border-top:1px solid rgba(39,51,48,.12); font-size:.92rem; color:var(--ink-soft)}
   .sources h2{font-size:1.05rem; margin-top:0}
-  footer{max-width:78ch; margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
+  footer{max-width:min(2200px,100%); margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
 
   /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
      13px altı metin bırakma, dokunulan her şey en az 44px olsun. */
@@ -90,6 +90,36 @@
     color:var(--ink-soft); background:rgba(243,243,235,.92); padding:3px 8px; border-radius:999px;
     pointer-events:none}
   @media (min-width:760px){ .tablewrap::after{display:none} }
+
+  /* ---------- GENIS EKRAN: dergi duzeni ----------
+     Sayfa ortada dar bir serit halinde kalmaz; bolumler yan yana dizilir ve
+     sutun sayisi arttikca satir uzunlugu okunur aralikta kalir. */
+  .lead{max-width:88ch}
+  .blk{min-width:0; break-inside:avoid}
+  .blk>:first-child{margin-top:0}
+  .blk .callout,.blk .note,.blk .sources,.blk .tablewrap{margin-top:0}
+  .blk--wide>p{max-width:88ch}
+  @media (min-width:1100px){
+    .intro{display:grid; grid-template-columns:1.08fr 1fr; gap:clamp(32px,3.4vw,72px); align-items:start}
+    .intro-a>:first-child{margin-top:0}
+    .intro-b>:first-child{margin-top:0}
+    .intro-b video{margin:0}
+    .body{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:clamp(30px,2.8vw,60px) clamp(34px,3.2vw,72px); align-items:start; margin-top:clamp(32px,4vh,52px)}
+    .blk--wide{grid-column:1 / -1}
+  }
+  @media (min-width:1700px){
+    .body{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .callout ul{columns:2; column-gap:clamp(32px,3vw,64px)}
+    .callout li{break-inside:avoid}
+  }
+
+  /* genis bloklarda ic ice metin de okunur satirda kalsin */
+  .blk--wide p{max-width:88ch}
+  @media (min-width:1700px){
+    .blk--wide>ul,.blk--wide>.callout>ul,.blk--wide>.calm>ul{columns:2; column-gap:clamp(32px,3vw,64px)}
+    .blk--wide>ul>li,.blk--wide>.callout>ul>li,.blk--wide>.calm>ul>li{break-inside:avoid}
+  }
 </style>
 </head>
 <body>
@@ -100,29 +130,36 @@
 </header>
 
 <article>
-  <p class="eyebrow">Ebeveynler için · Rehber</p>
+<p class="eyebrow">Ebeveynler için · Rehber</p>
   <h1>Büyüme ve gelişme takibi: persentil ne anlatır?</h1>
 
   <p class="lead">Bir çocuğun sağlıklı büyüdüğünü anlamanın yolu, tek bir kilodan değil,
   zaman içinde kendi çizgisini koruyan bir eğriden geçer. Persentiller bir yarış tablosu
   değil; çocuğunuzun kendi ritmini okumamıza yarayan bir haritadır.</p>
 
-  <h2>Persentil nedir, nasıl okunur?</h2>
+  <div class="body">
+
+  <section class="blk">
+<h2>Persentil nedir, nasıl okunur?</h2>
   <p>Persentil, çocuğunuzun ölçümünü aynı yaş ve cinsiyetteki 100 çocukla karşılaştırır.
   25. persentildeki bir bebek, 100 akranından yaklaşık 25'inden büyük, 75'inden küçüktür.
   <strong>3. ile 97. persentil arası</strong> genellikle normal kabul edilir. Önemli olan
   rakamın kendisi değil, <em>eğrinin seyridir</em>: çocuğunuz kendi çizgisini düzenli
   izliyorsa, bu çizgi ister 15. ister 85. persentil olsun, sağlıklı büyüme işaretidir.</p>
+  </section>
 
-  <h2>Neyi, neden ölçeriz?</h2>
+  <section class="blk">
+<h2>Neyi, neden ölçeriz?</h2>
   <ul>
     <li><strong>Kilo:</strong> Beslenme ve genel sağlığın en hızlı değişen göstergesi.</li>
     <li><strong>Boy:</strong> Uzun dönem büyümeyi yansıtır; genetik potansiyelle birlikte değerlendirilir.</li>
     <li><strong>Baş çevresi:</strong> Özellikle ilk 2 yılda beyin gelişiminin önemli bir ölçütü.</li>
     <li><strong>Boya göre kilo / VKİ:</strong> Çocuğun kilosunun boyuyla dengeli olup olmadığını gösterir.</li>
   </ul>
+  </section>
 
-  <h2>Aylara göre gelişim basamakları</h2>
+  <section class="blk blk--wide">
+<h2>Aylara göre gelişim basamakları</h2>
   <p>Aşağıdaki basamaklar bir <em>ortalama</em>dır; her çocuk kendi hızında ilerler.
   Amaç kıyaslamak değil, gidişatı izlemektir.</p>
   <div class="tablewrap">
@@ -137,14 +174,18 @@
       <tr><td>2 yaş</td><td>Koşar, merdiven çıkar</td><td>2 kelimelik cümleler kurar</td></tr>
     </table>
   </div>
+  </section>
 
-  <h2>Sağlam çocuk izlemi</h2>
+  <section class="blk">
+<h2>Sağlam çocuk izlemi</h2>
   <p>Büyüme ve gelişme, hastalık olmasa da düzenli izlenir. İlk yıl daha sık
   (genellikle 1., 2., 4., 6., 9. ve 12. aylarda), sonra 15., 18., 24. ayda ve
   yılda bir sürer. Bu görüşmelerde ölçümler eğriye işlenir, gelişim taranır,
   aşılar yapılır ve beslenme-uyku-güvenlik konuşulur.</p>
+  </section>
 
-  <div class="callout">
+  <section class="blk blk--wide">
+<div class="callout">
     <h2>Ne zaman değerlendirme gerekir?</h2>
     <ul>
       <li>Çocuğun kendi büyüme eğrisinden belirgin sapma ya da durağanlık.</li>
@@ -153,14 +194,18 @@
       <li><strong>Kazanılmış bir becerinin kaybı</strong> (gerileme) — her zaman değerlendirilmelidir.</li>
     </ul>
   </div>
+  </section>
 
-  <div class="note">
+  <section class="blk">
+<div class="note">
     Bu rehber genel bilgilendirme amaçlıdır ve muayenenin yerini tutmaz.
     Çocuğunuzun büyüme eğrisi ve gelişimi, öyküsü ve muayenesiyle birlikte
     değerlendirildiğinde anlam kazanır; şüphede kaldığınızda hekiminize danışın.
   </div>
+  </section>
 
-  <div class="sources">
+  <section class="blk">
+<div class="sources">
     <h2>Güvenilir kaynaklar</h2>
     <ul>
       <li><a href="https://hsgm.saglik.gov.tr" target="_blank" rel="noopener">T.C. Sağlık Bakanlığı — Halk Sağlığı Genel Müdürlüğü</a></li>
@@ -168,6 +213,10 @@
       <li><a href="https://www.kuh.ku.edu.tr" target="_blank" rel="noopener">Koç Üniversitesi Hastanesi</a></li>
     </ul>
   </div>
+  </section>
+
+  </div><!-- .body -->
+
 </article>
 
 <footer>Uzm. Dr. Aslı Ece Zeybek · Çocuk Sağlığı ve Hastalıkları Uzmanı · Son güncelleme: Temmuz 2026</footer>

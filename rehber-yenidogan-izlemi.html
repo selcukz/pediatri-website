@@ -48,7 +48,7 @@
   .topbar .go{background:var(--apricot); color:var(--apricot-ink); text-decoration:none; font-family:var(--disp);
     font-weight:700; font-size:.92rem; padding:9px 18px; border-radius:999px; box-shadow:0 3px 0 rgba(0,0,0,.14); flex-shrink:0}
   .topbar .go:focus-visible,.topbar .back:focus-visible{outline:3px solid var(--sage-deep); outline-offset:2px}
-  article{max-width:78ch; margin:0 auto; padding:clamp(40px,7vh,80px) clamp(20px,4vw,44px) 40px}
+  article{max-width:min(2200px,100%); margin:0 auto; padding:clamp(40px,7vh,80px) clamp(20px,4vw,44px) 40px}
   .eyebrow{font-family:var(--disp); font-weight:600; font-size:13px; letter-spacing:.09em; text-transform:uppercase; color:var(--sage-deep); margin:0 0 14px}
   h1{font-family:var(--disp); font-weight:800; font-size:clamp(1.9rem,4.5vw,3rem); line-height:1.05; letter-spacing:-.02em; margin:0 0 18px}
   h2{font-family:var(--disp); font-weight:700; font-size:clamp(1.25rem,2.4vw,1.6rem); margin:44px 0 12px}
@@ -67,7 +67,7 @@
   .note{background:var(--paper-2); border-radius:12px; padding:16px 20px; font-size:.95rem; color:var(--ink-soft); margin:36px 0}
   .sources{margin-top:44px; padding-top:20px; border-top:1px solid rgba(39,51,48,.12); font-size:.92rem; color:var(--ink-soft)}
   .sources h2{font-size:1.05rem; margin-top:0}
-  footer{max-width:78ch; margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
+  footer{max-width:min(2200px,100%); margin:0 auto; padding:0 clamp(20px,4vw,44px) 56px; font-size:.85rem; color:var(--ink-soft)}
 
   /* ---------- TELEFON: okunabilirlik ve dokunma hedefleri ----------
      13px altı metin bırakma, dokunulan her şey en az 44px olsun. */
@@ -90,6 +90,36 @@
     color:var(--ink-soft); background:rgba(243,243,235,.92); padding:3px 8px; border-radius:999px;
     pointer-events:none}
   @media (min-width:760px){ .tablewrap::after{display:none} }
+
+  /* ---------- GENIS EKRAN: dergi duzeni ----------
+     Sayfa ortada dar bir serit halinde kalmaz; bolumler yan yana dizilir ve
+     sutun sayisi arttikca satir uzunlugu okunur aralikta kalir. */
+  .lead{max-width:88ch}
+  .blk{min-width:0; break-inside:avoid}
+  .blk>:first-child{margin-top:0}
+  .blk .callout,.blk .note,.blk .sources,.blk .tablewrap{margin-top:0}
+  .blk--wide>p{max-width:88ch}
+  @media (min-width:1100px){
+    .intro{display:grid; grid-template-columns:1.08fr 1fr; gap:clamp(32px,3.4vw,72px); align-items:start}
+    .intro-a>:first-child{margin-top:0}
+    .intro-b>:first-child{margin-top:0}
+    .intro-b video{margin:0}
+    .body{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:clamp(30px,2.8vw,60px) clamp(34px,3.2vw,72px); align-items:start; margin-top:clamp(32px,4vh,52px)}
+    .blk--wide{grid-column:1 / -1}
+  }
+  @media (min-width:1700px){
+    .body{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .callout ul{columns:2; column-gap:clamp(32px,3vw,64px)}
+    .callout li{break-inside:avoid}
+  }
+
+  /* genis bloklarda ic ice metin de okunur satirda kalsin */
+  .blk--wide p{max-width:88ch}
+  @media (min-width:1700px){
+    .blk--wide>ul,.blk--wide>.callout>ul,.blk--wide>.calm>ul{columns:2; column-gap:clamp(32px,3vw,64px)}
+    .blk--wide>ul>li,.blk--wide>.callout>ul>li,.blk--wide>.calm>ul>li{break-inside:avoid}
+  }
 </style>
 </head>
 <body>
@@ -100,21 +130,26 @@
 </header>
 
 <article>
-  <p class="eyebrow">Ebeveynler için · Rehber</p>
+<p class="eyebrow">Ebeveynler için · Rehber</p>
   <h1>Yenidoğanla ilk günler: sakin bir başlangıç</h1>
 
   <p class="lead">İlk haftalar hem tanışma hem öğrenme dönemidir. Beslenme, uyku,
   sarılık ve göbek gibi başlıklarda neyin normal, neyin dikkat gerektirdiğini
   bilmek, telaşı azaltır ve önemli belirtileri zamanında fark etmenizi sağlar.</p>
 
-  <h2>İlk günler: taramalar</h2>
+  <div class="body">
+
+  <section class="blk">
+<h2>İlk günler: taramalar</h2>
   <p>Doğumdan sonra bebeğinize birkaç önemli tarama yapılır: <strong>topuk kanı
   (yenidoğan metabolik tarama)</strong>, <strong>işitme taraması</strong> ve
   bazı merkezlerde kritik doğumsal kalp hastalığı için oksijen ölçümü. Bunlar,
   görünürde sağlıklı bir bebekte bile erken tanı fırsatı sunar; randevularını
   aksatmayın.</p>
+  </section>
 
-  <h2>Beslenme: sıklık ve yeterlilik işaretleri</h2>
+  <section class="blk">
+<h2>Beslenme: sıklık ve yeterlilik işaretleri</h2>
   <p>Yenidoğan 24 saatte <strong>en az 8–12 kez</strong>, istedikçe emzirilir.
   Yeterli beslendiğinin işaretleri:</p>
   <ul>
@@ -124,8 +159,10 @@
   </ul>
   <p>İlk günlerdeki fizyolojik kilo kaybı beklenir; doğum kilosuna genellikle
   <strong>10–14 gün</strong> içinde geri dönülür.</p>
+  </section>
 
-  <h2>Sarılık: ne zaman normal, ne zaman değil?</h2>
+  <section class="blk">
+<h2>Sarılık: ne zaman normal, ne zaman değil?</h2>
   <p>Yaşamın 2–3. gününde başlayan, yüzden başlayıp hafif seyreden sarılık çoğu
   bebekte fizyolojiktir ve kendiliğinden geriler. Aşağıdakiler ise
   <em>zaman kaybetmeden</em> değerlendirilmelidir:</p>
@@ -135,22 +172,28 @@
     <li>Bebeği uykulu-halsiz yapan, beslenmeyi bozan sarılık.</li>
     <li>2 haftadan uzun süren sarılık.</li>
   </ul>
+  </section>
 
-  <h2>Göbek bakımı</h2>
+  <section class="blk">
+<h2>Göbek bakımı</h2>
   <p>Göbek kordonu kalıntısını <strong>kuru ve temiz</strong> tutun; bezin üstünü
   katlayarak kordonu açıkta bırakın. Rutin olarak pudra, yağ veya sürtme
   önerilmez. Genellikle 1–2 haftada kendiliğinden düşer. Çevresinde kızarıklık,
   kötü koku, akıntı ya da kanama olursa hekime danışın.</p>
+  </section>
 
-  <h2>Güvenli uyku</h2>
+  <section class="blk">
+<h2>Güvenli uyku</h2>
   <ul>
     <li>Bebeği her uykuda <strong>sırtüstü</strong> yatırın.</li>
     <li>Sert ve düz bir zemin; yatakta yastık, yumuşak oyuncak ve gevşek örtü olmasın.</li>
     <li>Odayı aşırı ısıtmayın; bebeği fazla giydirmeyin.</li>
     <li>Aynı odada ayrı yatak önerilir; dumansız ortam koruyucudur.</li>
   </ul>
+  </section>
 
-  <div class="callout">
+  <section class="blk blk--wide">
+<div class="callout">
     <h2>Hemen acile</h2>
     <ul>
       <li><strong>38°C ve üzeri ateş</strong> (3 aydan küçük bebekte her zaman acil).</li>
@@ -159,14 +202,18 @@
       <li>Hızla artan sarılık; tekrarlayan fışkırır tarzda kusma; idrar/ıslak bezde belirgin azalma.</li>
     </ul>
   </div>
+  </section>
 
-  <div class="note">
+  <section class="blk">
+<div class="note">
     Bu rehber genel bilgilendirme amaçlıdır ve muayenenin yerini tutmaz.
     Yenidoğan döneminde belirtiler silik olabilir; en küçük şüphede bile
     hekiminize danışmaktan çekinmeyin.
   </div>
+  </section>
 
-  <div class="sources">
+  <section class="blk">
+<div class="sources">
     <h2>Güvenilir kaynaklar</h2>
     <ul>
       <li><a href="https://hsgm.saglik.gov.tr" target="_blank" rel="noopener">T.C. Sağlık Bakanlığı — Yenidoğan tarama programları</a></li>
@@ -174,6 +221,10 @@
       <li><a href="https://www.kuh.ku.edu.tr" target="_blank" rel="noopener">Koç Üniversitesi Hastanesi</a></li>
     </ul>
   </div>
+  </section>
+
+  </div><!-- .body -->
+
 </article>
 
 <footer>Uzm. Dr. Aslı Ece Zeybek · Çocuk Sağlığı ve Hastalıkları Uzmanı · Son güncelleme: Temmuz 2026</footer>

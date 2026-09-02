@@ -65,7 +65,7 @@
   .topbar .go{background:var(--tugla); color:#F7F1E4; text-decoration:none; font-family:var(--body);
     font-weight:700; font-size:.9rem; padding:9px 18px; border-radius:999px; box-shadow:0 3px 0 rgba(0,0,0,.2); flex-shrink:0}
   .topbar .go:focus-visible,.topbar .back:focus-visible{outline:3px solid var(--cini); outline-offset:2px}
-  article{max-width:min(1240px,100%); margin:0 auto; padding:clamp(28px,5vh,56px) clamp(20px,3.5vw,72px) 40px}
+  article{max-width:min(2200px,100%); margin:0 auto; padding:clamp(28px,5vh,56px) clamp(20px,3.5vw,72px) 40px}
   .eyebrow{font-family:var(--disp); font-weight:600; font-size:.95rem; letter-spacing:.2em; text-transform:uppercase;
     color:var(--turkuaz); margin:0 0 14px}
   h1{font-family:var(--disp); font-weight:700; font-size:clamp(2.1rem,5vw,3.5rem); line-height:1.06;
@@ -88,7 +88,7 @@
   .sources{margin-top:44px; padding-top:20px; border-top:1px solid var(--altin-soft); font-size:.92rem; color:var(--ink-soft)}
   .sources h2{font-size:1.2rem; margin-top:0; padding-bottom:0}
   .sources h2::after{display:none}
-  footer{max-width:min(1240px,100%); margin:0 auto; padding:0 clamp(20px,3.5vw,72px) 56px; font-size:.85rem; color:var(--ink-soft)}
+  footer{max-width:min(2200px,100%); margin:0 auto; padding:0 clamp(20px,3.5vw,72px) 56px; font-size:.85rem; color:var(--ink-soft)}
   /* bir bakışta çipleri */
   .glance{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:20px 0}
   .glance .chip{background:var(--sir-2); border:1px solid rgba(176,138,46,.45); border-radius:6px;
@@ -116,6 +116,33 @@
   .cini-blok figcaption{margin-top:14px; font-size:.9rem; color:var(--ink-soft); font-style:italic}
   .cini-text{margin-top:22px}
   .cini-text h2{margin-top:0}
+
+  /* ---------- GENIS EKRAN: dergi duzeni ----------
+     Sayfa ortada dar bir serit halinde kalmaz; bolumler yan yana dizilir ve
+     sutun sayisi arttikca satir uzunlugu okunur aralikta kalir. */
+  .blk{min-width:0; break-inside:avoid}
+  .blk>:first-child{margin-top:0}
+  .blk>h2:first-child{margin-top:0}
+  .blk--wide>p{max-width:88ch}
+  .callout>p{max-width:88ch}
+  @media (min-width:1100px){
+    .intro{display:grid; grid-template-columns:1.06fr 1fr; gap:clamp(32px,3.4vw,76px); align-items:start}
+    .intro-b h2{margin-top:0}
+    .intro-b .glance{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+    .body{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:clamp(30px,2.8vw,60px) clamp(34px,3.2vw,72px); align-items:start; margin-top:clamp(32px,4vh,52px)}
+    .blk--wide{grid-column:1 / -1}
+    .blk--media{margin-top:0}
+    /* tek sutuna dusen yardimci gorsel: kare ustte, aciklama altta */
+    .blk:not(.blk--wide) .etut-solo{display:block; max-width:none; margin:0}
+    .blk:not(.blk--wide) .etut-solo figcaption{margin-top:10px}
+  }
+  @media (min-width:1700px){
+    .body{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .blk--dev .cols2{columns:4}
+    .callout ul{columns:3}
+    .anne p{columns:3; column-gap:clamp(32px,3vw,64px); max-width:none}
+  }
   @media (min-width:1100px){
     .cols2{columns:2; column-gap:clamp(32px,3vw,64px)}
     .cols2>li,.cols2 .mgroup{break-inside:avoid}
@@ -157,7 +184,9 @@
 </header>
 
 <article>
-  <p class="eyebrow">Ebeveynler için · Ay Ay Bebek Rehberi</p>
+  <div class="intro">
+  <div class="intro-a">
+<p class="eyebrow">Ebeveynler için · Ay Ay Bebek Rehberi</p>
   <h1>8 aylık bebek: bu ay sizi ne bekliyor?</h1>
 
   <p class="lead">Sekizinci ay hareketin ayı: bebeğiniz artık bir yerde durmuyor.
@@ -175,12 +204,16 @@
     <a href="rehber-6-aylik-bebek.html">6</a>
     <a href="rehber-7-aylik-bebek.html">7</a>
     <a class="now" href="rehber-8-aylik-bebek.html" aria-current="page">8</a>
-    <a href="rehber-9-aylik-bebek.html">9</a><a href="rehber-10-aylik-bebek.html">10</a>
-    <span title="Yakında">11</span><span title="Yakında">12</span>
+    <a href="rehber-9-aylik-bebek.html">9</a>
+    <a href="rehber-10-aylik-bebek.html">10</a>
+    <a href="rehber-11-aylik-bebek.html">11</a>
+    <a href="rehber-12-aylik-bebek.html">12</a>
   </nav>
-  <p class="months-note">Diğer ayların sayfaları hazırlandıkça buraya eklenecek.</p>
+  <p class="months-note">Serinin on iki ayı da tamamlandı.</p>
+  </div>
 
-  <h2>Bir bakışta 8. ay</h2>
+  <div class="intro-b">
+<h2>Bir bakışta 8. ay</h2>
   <div class="glance">
     <div class="chip"><div class="big">12–15 sa</div><div class="lbl">günlük uyku,<br>2 şekerleme</div></div>
     <div class="chip"><div class="big">Emekleme</div><div class="lbl">ve tutunarak<br>ayağa kalkma</div></div>
@@ -188,8 +221,13 @@
     <div class="chip"><div class="big">Kıskaç kavrama</div><div class="lbl">başparmak ve<br>işaret parmağı</div></div>
     <div class="chip"><div class="big">Takvimde aşı yok</div><div class="lbl">sıradaki doz: 9. ayda<br>KKK ek dozu</div></div>
   </div>
+  </div>
+  </div>
 
-  <h2>Gelişim: bu ay bebeğiniz ne yapar?</h2>
+  <div class="body">
+
+  <section class="blk blk--wide blk--dev">
+<h2>Gelişim: bu ay bebeğiniz ne yapar?</h2>
   <p>Aşağıdakiler çoğu bebeğin 8. ay boyunca kazandığı becerilerdir. Her bebek
   kendi hızında ilerler; birkaç hafta erken ya da geç olması çoğu zaman normaldir.</p>
 
@@ -232,8 +270,10 @@
   </ul>
   </div>
   </div>
+  </section>
 
-  <div class="cini-blok">
+  <section class="blk blk--wide blk--media">
+<div class="cini-blok">
     <figure class="cini-frame" style="margin:0">
       <video data-ambient src="assets/video_8ay_minai.mp4" poster="assets/poster_8ay_minai.webp" muted loop playsinline
              aria-label="Selçuklu mina'i çinisi üslubunda kısa film: sekiz aylık bir bebek emekleyerek annesine doğru ilerler ve alçak bir sandığa tutunarak ayağa kalkar; çevrelerinde kuşlar ve hayat ağacı motifleri" preload="none"></video>
@@ -255,8 +295,10 @@
       v.setAttribute('controls','');
     })();
   </script>
+  </section>
 
-  <h2>Beslenme: parmak yemekleri ve kendi yeme isteği</h2>
+  <section class="blk">
+<h2>Beslenme: parmak yemekleri ve kendi yeme isteği</h2>
   <p>Ek gıda bu ayda genellikle <strong>günde 3 öğüne</strong> ve aralarda küçük
   ara öğünlere oturur. Anne sütü ya da mama 1 yaşına kadar <strong>birincil besin
   kaynağı olmayı sürdürür</strong>; ek gıda onu tamamlar.</p>
@@ -290,8 +332,10 @@
         tuz-şeker eklenmemiş, meyve suyu yok.</li>
   </ul>
   <p>Ayrıntılı yol haritası için: <a href="rehber-beslenme.html">Ek gıdaya nasıl başlarız?</a></p>
+  </section>
 
-  <h2>Uyku: 8–10. ay dalgalanması</h2>
+  <section class="blk">
+<h2>Uyku: 8–10. ay dalgalanması</h2>
   <p>Toplam uyku günde 12–15 saat, gündüz uykuları çoğu bebekte
   <strong>2 şekerlemeye</strong> yerleşir. Bu aylarda gece uyanmalarının artması
   sık görülür ve geçicidir; nedeni iki yenilik: <strong>yeni motor beceriler</strong>
@@ -305,8 +349,10 @@
     <li>Güvenli uyku sürüyor: boş beşik, ilk 12 ay <strong>aynı odada kendi yatağında</strong>.</li>
   </ul>
   <p>Ayrıntı için: <a href="rehber-uyku-duzeni.html">Çocuklarda uyku düzeni rehberi</a>.</p>
+  </section>
 
-  <h2>Ayrılık kaygısı: "gittiğinde geri gelirsin"</h2>
+  <section class="blk">
+<h2>Ayrılık kaygısı: "gittiğinde geri gelirsin"</h2>
   <p>Bebek artık sizin var olmaya devam ettiğinizi biliyor ama <strong>ne zaman
   döneceğinizi</strong> bilmiyor. Bu yüzden ayrılıklar zorlaşır. Sakin bir tutum
   bu dönemi kısaltır:</p>
@@ -317,8 +363,10 @@
     <li><strong>Ce-ee oyunu</strong> tam olarak bunun provasıdır: kaybolan şey geri gelir.</li>
     <li>Bakıcıya ya da anneanneye bırakırken birkaç dakika birlikte kalın, geçiş ani olmasın.</li>
   </ul>
+  </section>
 
-  <h2>Tutunarak ayağa kalkan bebek: ev güvenliği</h2>
+  <section class="blk">
+<h2>Tutunarak ayağa kalkan bebek: ev güvenliği</h2>
   <p>Artık yalnızca yer değil, <strong>yükseklik</strong> de erişilebilir. Evi bu
   yeni menzile göre gözden geçirin:</p>
   <ul class="cols2">
@@ -337,8 +385,10 @@
     <li>Zeminde <strong>çıplak ayak</strong> ya da kaymaz tabanlı çorap; ayakkabı
         yürüyene kadar gerekmez.</li>
   </ul>
+  </section>
 
-  <h2>Oyun ve beyin gelişimi</h2>
+  <section class="blk">
+<h2>Oyun ve beyin gelişimi</h2>
   <ul class="cols2">
     <li><strong>Ce-ee ve saklambaç:</strong> Oyuncağı örtünün altına saklayın,
         bulmasını bekleyin — nesne sürekliliği ve sabır aynı anda.</li>
@@ -353,8 +403,10 @@
     <li><strong>Ekran:</strong> 18–24 aydan önce önerilmez; görüntülü aile görüşmesi
         bunun dışındadır.</li>
   </ul>
+  </section>
 
-  <h2>Aşılar ve bu ayın sağlık takvimi</h2>
+  <section class="blk">
+<h2>Aşılar ve bu ayın sağlık takvimi</h2>
   <p>Ulusal aşı takviminde <strong>8. ayda rutin bir aşı yoktur</strong>; sıradaki
   doz <strong>9. ayın sonunda uygulanan KKK (kızamık–kızamıkçık–kabakulak) ek
   dozudur</strong>. Bu ay üç şey için iyi bir zamandır:</p>
@@ -368,8 +420,10 @@
         taraması</strong> istenebilir; demir eksikliği bu yaş grubunda sıktır.</li>
   </ul>
   <p>Tam takvim için: <a href="rehber-asi-takvimi.html">Hangi ay hangi aşı?</a></p>
+  </section>
 
-  <h2>Bu ayın kontrol listesi</h2>
+  <section class="blk">
+<h2>Bu ayın kontrol listesi</h2>
   <ul class="cols2">
     <li><strong>D vitamini</strong> damlasına her gün devam (1 yaşına kadar).</li>
     <li><strong>Demir damlası</strong> (4–12. aylar) hekiminizin önerdiği dozda.</li>
@@ -380,8 +434,10 @@
     <li>Dişler çıktıysa günde iki kez florürlü macunla fırçalayın.</li>
     <li><strong>9. ay muayenesi</strong> randevusunu alın.</li>
   </ul>
+  </section>
 
-  <div class="callout">
+  <section class="blk blk--wide">
+<div class="callout">
     <h2>Ne zaman hekime başvurmalı?</h2>
     <ul>
       <li><strong>38°C ve üzeri ateş</strong> — bebekte ateş hafife alınmamalıdır.</li>
@@ -399,8 +455,10 @@
     sonrası kusma veya uyanmama</strong> gecikmeden <strong>112</strong>'yi gerektirir.
     Gece gelişen ateş için: <a href="rehber-gece-atesi.html">Gece ateş rehberi</a>.</p>
   </div>
+  </section>
 
-  <h2>Anneye not</h2>
+  <section class="blk blk--wide anne">
+<h2>Anneye not</h2>
   <p>Sekizinci ay, kucağınızdan inip odanın öbür ucuna giden ama arkasına dönüp
   hâlâ orada olduğunuzdan emin olmak isteyen bir bebeğin ayıdır. Bu iki şey aynı
   anda doğrudur: keşfetmek istiyor ve size ihtiyacı var. Gün boyu peşinden koşmak
@@ -408,8 +466,10 @@
   size iyi gelecek yatırımdır. İki haftadan uzun süren yoğun hüzün, sürekli ağlama
   isteği ya da bebeğe karşı ilgisizlik hissi doğum sonrası depresyonun işareti
   olabilir; tedavi edilebilir bir durumdur — hekiminizle paylaşın.</p>
+  </section>
 
-  <div class="endgrid">
+  <section class="blk blk--wide">
+<div class="endgrid">
   <div class="note">
     Bu rehber genel bilgilendirme amaçlıdır ve muayenenin yerini tutmaz. Her bebek
     kendi hızında gelişir; buradaki basamaklar çoğunluğun aralığıdır. Bebeğinizle
@@ -427,6 +487,10 @@
     </ul>
   </div>
   </div>
+  </section>
+
+  </div><!-- .body -->
+
 </article>
 
 <footer>Uzm. Dr. Aslı Ece Zeybek · Çocuk Sağlığı ve Hastalıkları Uzmanı · Son güncelleme: Temmuz 2026</footer>
