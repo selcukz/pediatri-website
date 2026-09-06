@@ -31,6 +31,13 @@
 
   <!-- ============ ENGLISH GUIDES ============ -->
   <url>
+    <loc>https://aslidoktor.com/en/guide-child-hospital-visit-turkey.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-child-hospital-visit-turkey.html"/>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://aslidoktor.com/en/guide-child-fever-turkey.html</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://aslidoktor.com/rehber-gece-atesi.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://aslidoktor.com/en/guide-child-fever-turkey.html"/>
